@@ -83,7 +83,6 @@ section{padding-block:88px;border-top:1px solid var(--line)}
 .stage svg{display:block;width:100%;max-width:340px;height:auto;margin-inline:auto;overflow:visible}
 .stage .cap{font-family:var(--font-display);font-size:34px;line-height:1;text-align:center}
 .stage .cap small{font-family:var(--font-body);font-size:13px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-left:6px}
-.giftq{margin:14px 0 8px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
 .group{margin-bottom:32px}
 .group h3{font-family:var(--font-body);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted);margin-bottom:14px}
 .sizes{display:grid;gap:10px;align-items:end;padding-bottom:12px;border-bottom:1px solid var(--line)}
@@ -111,8 +110,8 @@ section{padding-block:88px;border-top:1px solid var(--line)}
 /* flavors */
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
 .card{background:var(--bg);display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;padding:28px;align-items:start}
-.card .tile{background:none;aspect-ratio:1;display:grid;place-items:center;overflow:hidden}
-.card .tile img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+.card .tile{aspect-ratio:1;display:grid;place-items:center}
+.card .tile img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 10px 12px rgba(42,26,18,.2))}
 .card h3{font-size:34px;margin-bottom:10px}
 .card p.d{color:var(--muted);margin-bottom:16px}
 .card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:14px}
@@ -132,6 +131,7 @@ td.n{font-family:var(--font-display);font-size:32px;font-weight:600;line-height:
 td.p{font-family:var(--font-display);font-size:28px;line-height:1}
 td.m{color:var(--muted);font-size:15px}
 td.p.off{color:var(--muted);opacity:.45}
+.ask{font-family:var(--font-body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
 td.p[data-fl]:hover{color:var(--accent)}
 tbody tr{cursor:pointer;transition:background .2s}
 tbody tr:hover{background:var(--surface)}
@@ -215,6 +215,9 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
 .mode .chip{padding:9px 20px}
 .minmsg{margin:0;padding-top:10px;font-size:14px;color:var(--accent);min-height:0}
 .minmsg:empty{display:none}
+.gtitle{margin:0;padding-top:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.feerow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:14px;font-size:14px;color:var(--muted)}
+.feerow b{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--fg);font-variant-numeric:tabular-nums}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 
@@ -224,7 +227,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   <div class="wrap">
     <a class="brand" href="#topo" aria-label="Caramel Doces no Pote"><img src="img/logo.png" alt="" width="44" height="44"><span>CARAMEL</span></a>
     <nav aria-label="Principal">
-      <a href="#potes">Potes</a><a href="#sabores">Sabores</a><a href="#valores">Valores</a><a href="#kit">Kit Festa</a>
+      <a href="#potes">Potes</a><a href="#sabores">Sabores</a><a href="#valores">Valores</a><a href="#kit">Kit Festa</a><a href="https://www.instagram.com/potcaramel/" target="_blank" rel="noopener">Instagram</a>
     </nav>
     <button class="cartbtn" id="openCart" type="button" aria-haspopup="dialog">Carrinho <b id="cnt">0</b></button>
   </div>
@@ -253,7 +256,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   <div class="head">
     <p class="eyebrow">Monte o seu</p>
     <h2>Escolha o pote e o sabor.</h2>
-    <p>Os cinco potes aparecem na mesma escala. Toque em um pote para ver o tamanho e o valor.</p>
+    <p>Os cinco potes aparecem na mesma escala, com as medidas reais do vidro. Toque em um pote para ver as dimensões e o valor.</p>
   </div>
   <div class="config">
     <div class="stage">
@@ -275,10 +278,10 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
         <div class="flavors" id="vars" role="radiogroup" aria-labelledby="lblVar"></div>
       </div>
       <div class="summary">
-        <div class="price"><span id="price">R$ 14,00</span></div>
+        <div class="price"><span id="price">R$ 13,00</span></div>
         <p class="desc" id="desc"></p>
         <div class="buy">
-          <div class="qty" role="group" aria-label="Quantidade"><button type="button" id="qMinus" aria-label="Diminuir">−</button><output id="qVal" aria-live="polite">1</output><button type="button" id="qPlus" aria-label="Aumentar">+</button></div>
+          <div class="qty" id="qtyBox" role="group" aria-label="Quantidade"><button type="button" id="qMinus" aria-label="Diminuir">−</button><output id="qVal" aria-live="polite">1</output><button type="button" id="qPlus" aria-label="Aumentar">+</button></div>
           <button class="btn" id="addBtn" type="button">Adicionar ao carrinho</button>
         </div>
       </div>
@@ -308,7 +311,9 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
     </table>
   </div>
   <div class="tnote">
-    <p>Pudim de 120 a 240 ml. Doce de leite de 40 a 180 ml, tradicional ou com creme de avelã, pelo mesmo valor. Creme de avelã e geleia de amora de 40 a 120 ml. Nos potes de 120 ml ou mais, o doce de leite e o creme de avelã custam R$ 1 a mais que o pudim e a geleia. O pote de 40 ml custa R$ 7 em todos os sabores.</p>
+    <p>Pudim de 120 a 240 ml. Doce de leite de 40 a 180 ml, tradicional ou com creme de avelã, pelo mesmo valor. Creme de avelã de 40 a 120 ml. Nos potes de 120 ml ou mais, o doce de leite e o creme de avelã custam R$ 1 a mais que o pudim. O pote de 40 ml custa R$ 7.</p>
+    <p>Geleia de amora (40 e 120 ml): sob consulta de disponibilidade. Toque em Consultar para falar com a gente no WhatsApp.</p>
+    <p>Para presente, a embalagem custa R$ 1,50 a mais por pedido. Você escolhe no carrinho.</p>
     <p>Entregas e encomendas na capital de São Paulo. Pedido mínimo de R$ 50 para entrega. Retirada sem valor mínimo.</p>
   </div>
 </div></section>
@@ -318,7 +323,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   <div>
     <p class="eyebrow">Sob encomenda</p>
     <h2>Kit Festa</h2>
-    <p style="color:var(--muted)">20 potinhos de 40 ml para aniversários, chás e lembrancinhas, com doce de leite, creme de avelã e geleia de amora na combinação que você escolher.</p>
+    <p style="color:var(--muted)">20 potinhos de 40 ml para aniversários, chás e lembrancinhas, com doce de leite e creme de avelã na combinação que você escolher. Geleia de amora sob consulta de disponibilidade.</p>
     <div class="big">R$ 135,00</div>
     <p class="sub">R$ 6,75 por potinho. Comprando avulso, os 20 sairiam por R$ 140,00. Os sabores são combinados com você no WhatsApp. Encomende com 2 dias de antecedência.</p>
     <button class="btn" id="addKit" type="button">Adicionar ao carrinho</button>
@@ -342,8 +347,10 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
     <small>Capital SP · Encomendas no WhatsApp</small>
     <small>Pedido mínimo de R$ 50 para entrega · Retirada sem mínimo</small>
     <p class="num" id="num">(11) 94799-2124</p>
+    <small>Instagram <a href="https://www.instagram.com/potcaramel/" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">@potcaramel</a></small>
     <div class="copy">
       <a class="btn" id="waFoot" href="https://wa.me/5511947992124" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn ghost" id="igFoot" href="https://www.instagram.com/potcaramel/" target="_blank" rel="noopener">Instagram @potcaramel</a>
       <button class="btn ghost" id="copyBtn" type="button">Copiar número</button>
     </div>
     <small style="margin-top:28px">© Caramel Doces no Pote</small>
@@ -363,17 +370,18 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
       <p class="minmsg" id="minmsg" role="status"></p>
     </div>
     <div id="giftBox" hidden>
-      <p class="giftq" id="giftq">É para presente?</p>
-      <div class="mode" id="gift" role="radiogroup" aria-labelledby="giftq">
-        <button type="button" class="chip" role="radio" data-gift="sim" aria-checked="false">Sim</button>
+      <p class="gtitle" id="lblGift">É para presente?</p>
+      <div class="mode" id="gift" role="radiogroup" aria-labelledby="lblGift">
         <button type="button" class="chip" role="radio" data-gift="nao" aria-checked="false">Não</button>
+        <button type="button" class="chip" role="radio" data-gift="sim" aria-checked="false">Sim, embalagem de presente (+ R$ 1,50 por pedido)</button>
       </div>
       <p class="minmsg" id="giftmsg" role="status"></p>
     </div>
+    <div class="feerow" id="feeRow" hidden><span id="feeTxt"></span><b id="feeVal"></b></div>
     <div class="tot"><span>Total</span><b id="total">R$ 0,00</b></div>
     <div class="fin">
       <a class="btn" id="checkout" href="#" target="_blank" rel="noopener" aria-disabled="true">Pedir orçamento no WhatsApp</a>
-      <small>O orçamento vai escrito na mensagem, com o seu nome. A Caramel confirma valores, pagamento e entrega pelo WhatsApp.</small>
+      <small>O pedido vai escrito na mensagem, como um pedido de orçamento, com o seu nome. A Caramel confirma valor, prazo, pagamento e entrega pelo WhatsApp.</small>
     </div>
   </aside>
 </div>
@@ -402,10 +410,10 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   /* Medidas do vidro (catálogo do fabricante): d = diâmetro, h = altura, lid = diâmetro da tampa, tudo em mm */
   var SIZES=[
     {ml:40,price:7,d:44,h:47.7,lid:38,vidro:40,use:'Porção individual para provar ou presentear. É o tamanho do Kit Festa.'},
-    {ml:120,price:13,d:63,h:63,lid:58,vidro:122,use:'O tamanho do dia a dia.'},
-    {ml:150,price:14,d:66,h:66,lid:63,vidro:150,use:'O meio-termo entre o pote de 120 ml e o de 180 ml.'},
-    {ml:180,price:15,d:61,h:92.2,lid:58,vidro:190,use:'Para quem quer mais. Boa medida para dividir em dois.'},
-    {ml:240,price:20,d:70,h:80,lid:63,vidro:240,use:'O maior pote da casa.'}
+    {ml:120,price:12,d:63,h:63,lid:58,vidro:122,use:'O tamanho do dia a dia.'},
+    {ml:150,price:13,d:66,h:66,lid:63,vidro:150,use:'O meio-termo entre o pote de 120 ml e o de 180 ml.'},
+    {ml:180,price:14,d:61,h:92.2,lid:58,vidro:190,use:'Para quem quer mais. Boa medida para dividir em dois.'},
+    {ml:240,price:18,d:70,h:80,lid:63,vidro:240,use:'O maior pote da casa.'}
   ];
   var FL=[
     {id:'pudim',name:'Pudim',sizes:[120,150,180,240],body:'#EBC373',top:'#9B4A17',img:'img/pudim.png',
@@ -421,7 +429,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
     {id:'creme-de-avela',name:'Creme de avelã',extra:1,sizes:[40,120],body:'#6E412A',top:'#7A4A31',img:'img/creme-de-avela.png',
       d:'Creme de avelã com chocolate, aveludado e de sabor intenso.',
       tex:'Aveludado e denso',par:'Morango, banana e pão de forma'},
-    {id:'geleia-de-amora',name:'Geleia de amora',sizes:[40,120],body:'#3B1526',top:'#55203A',img:'img/geleia-de-amora.png',
+    {id:'geleia-de-amora',name:'Geleia de amora',consulta:true,sizes:[40,120],body:'#3B1526',top:'#55203A',img:'img/geleia-de-amora.png',
       d:'Geleia de amora com pedaços da fruta, brilhante e levemente ácida.',
       tex:'Brilhante, com pedaços de fruta',par:'Queijo cremoso, torradas e iogurte'}
   ];
@@ -431,6 +439,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   var mm=function(n){return String(n).replace('.',',')};
   var sizeOf=function(ml){return SIZES.filter(function(s){return s.ml===ml})[0]};
   var priceOf=function(s,f){return s.price+(s.ml>40?(f.extra||0):0)};
+  var ptxt=function(s,f){return f.consulta?'sob consulta':brl(priceOf(s,f))};
   var flOf=function(id){return FL.filter(function(f){return f.id===id})[0]};
   var varOf=function(f,id){
     if(!f.variants)return {id:'',chip:'',label:f.name,body:f.body,top:f.top};
@@ -478,7 +487,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
     box.innerHTML=SIZES.map(function(s){
       var ok=f.sizes.indexOf(s.ml)>=0,H=(s.h+1.4).toFixed(1);
       return '<button type="button" class="size" role="radio" data-ml="'+s.ml+'" aria-checked="'+(s.ml===st.ml)+'" tabindex="'+(s.ml===st.ml?0:-1)+'"'+(ok?'':' disabled')+
-        ' aria-label="Pote de '+s.ml+' ml, '+brl(priceOf(s,f))+(ok?'':', indisponível neste sabor')+'">'+
+        ' aria-label="Pote de '+s.ml+' ml, '+ptxt(s,f)+(ok?'':', indisponível neste sabor')+'">'+
         '<svg viewBox="0 0 '+s.d+' '+H+'" aria-hidden="true" style="color:var(--fg)">'+jarInner(s,c)+'</svg>'+
         '<span class="sl"><b>'+s.ml+'</b><small>ml</small></span></button>';
     }).join('');
@@ -518,8 +527,11 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
     var s=sizeOf(st.ml),f=flOf(st.fl),v=varOf(f,st.vr),c=colors(f,v);
     st.vr=v.id;
     renderSizes(c,f);renderFlavors();renderVars(f);renderStage(s,c);
-    $('price').textContent=brl(priceOf(s,f));
-    $('desc').textContent=v.label+' em pote de '+s.ml+' ml. '+s.use;
+    var ask=!!f.consulta;
+    $('price').textContent=ask?'Sob consulta':brl(priceOf(s,f));
+    $('qtyBox').hidden=ask;
+    $('addBtn').textContent=ask?'Consultar disponibilidade':'Adicionar ao carrinho';
+    $('desc').textContent=v.label+' em pote de '+s.ml+' ml. '+s.use+(ask?' Sabor sob consulta: confirme a disponibilidade pelo WhatsApp antes de pedir.':'');
     $('note').textContent=(st.nota?st.nota+' ':'')+f.name+': potes de '+listMl(f.sizes)+'.';
   }
   function nearest(list,ml){return list.reduce(function(a,b){return Math.abs(b-ml)<Math.abs(a-ml)?b:a})}
@@ -549,11 +561,11 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
 
   /* flavor cards */
   $('cards').innerHTML=FL.map(function(f){
-    var extra=f.variants?'<dt>Variedades</dt><dd>'+f.variants.map(function(v){return v.chip}).join(' · ')+'</dd>':'';
+    var extra=(f.variants?'<dt>Variedades</dt><dd>'+f.variants.map(function(v){return v.chip}).join(' · ')+'</dd>':'')+(f.consulta?'<dt>Valor</dt><dd>Sob consulta de disponibilidade</dd>':'');
     return '<article class="card"><div class="tile"><img src="'+f.img+'" alt="Pote de '+f.name+'"></div><div>'+
       '<h3>'+f.name+'</h3><p class="d">'+f.d+'</p>'+
       '<dl><dt>Textura</dt><dd>'+f.tex+'</dd><dt>Combina</dt><dd>'+f.par+'</dd><dt>Tamanhos</dt><dd>'+f.sizes.map(function(x){return x+' ml'}).join(' · ')+'</dd>'+extra+'</dl>'+
-      '<button type="button" data-pick="'+f.id+'">Montar este pote</button></div></article>';
+      '<button type="button" data-pick="'+f.id+'">'+(f.consulta?'Consultar disponibilidade':'Montar este pote')+'</button></div></article>';
   }).join('');
   $('cards').addEventListener('click',function(e){
     var b=e.target.closest('[data-pick]');if(!b)return;
@@ -564,7 +576,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   $('rows').innerHTML=SIZES.map(function(s){
     return '<tr data-ml="'+s.ml+'" tabindex="0"><td class="n">'+s.ml+' ml</td>'+
       FL.map(function(f){
-        return f.sizes.indexOf(s.ml)>=0?'<td class="p" data-fl="'+f.id+'">'+brl(priceOf(s,f)).replace(',00','')+'</td>':'<td class="p off" aria-label="indisponível">—</td>';
+        return f.sizes.indexOf(s.ml)>=0?'<td class="p" data-fl="'+f.id+'">'+(f.consulta?'<span class="ask">Consultar</span>':brl(priceOf(s,f)).replace(',00',''))+'</td>':'<td class="p off" aria-label="indisponível">—</td>';
       }).join('')+'</tr>';
   }).join('');
   function rowGo(ml,flId){
@@ -587,7 +599,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   });
 
   /* customer registration, cart and WhatsApp */
-  var CART=[],qty=1,lastFocus=null,tt,CUST=null,pending=null,MODE='entrega',MIN=50,GIFT=null,GIFTFEE=1.5;
+  var CART=[],qty=1,lastFocus=null,tt,CUST=null,pending=null,MODE='entrega',MIN=50,GIFT=null,GIFT_FEE=1.5;
   try{if(localStorage.getItem('caramel-modo')==='retirada')MODE='retirada'}catch(e){}
   try{CUST=JSON.parse(localStorage.getItem('caramel-cliente')||'null')}catch(e){CUST=null}
   if(!(CUST&&CUST.nome&&CUST.tel))CUST=null;
@@ -621,7 +633,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   });
   function who(){return CUST?CUST.nome+' (telefone '+CUST.tel+')':'______'}
   function waGeneric(){
-    return 'https://wa.me/'+WA+'?text='+encodeURIComponent('Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria de um orçamento para: ');
+    return 'https://wa.me/'+WA+'?text='+encodeURIComponent('Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria que vocês me adoçassem com: ');
   }
   $('waFoot').addEventListener('click',function(e){
     if(CUST){this.href=waGeneric();return}
@@ -634,7 +646,7 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
     if(i.key==='kit')return true;
     if(i.key.indexOf('p|')!==0)return false;
     var p=i.key.split('|'),s=sizeOf(parseInt(p[1],10)),f=flOf(p[2]);
-    if(!s||!f||f.sizes.indexOf(s.ml)<0)return false;
+    if(!s||!f||f.consulta||f.sizes.indexOf(s.ml)<0)return false;
     i.price=priceOf(s,f);return true;
   });
   function saveCart(){try{localStorage.setItem('caramel-cart',JSON.stringify(CART))}catch(e){}}
@@ -654,14 +666,16 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
       var eb=document.createElement('button');eb.type='button';eb.className='rm';eb.textContent='Alterar';eb.addEventListener('click',openReg);wh.appendChild(eb);
       wh.hidden=false;
     }else{wh.hidden=true}
-    var n=0,sub=0,potes=0;CART.forEach(function(i){n+=i.qty;sub+=i.qty*i.price;potes+=i.qty*(i.key==='kit'?20:1)});
-    var fee=GIFT===true?potes*GIFTFEE:0,total=sub+fee;
+    var n=0,sub=0,units=0;CART.forEach(function(i){n+=i.qty;sub+=i.qty*i.price;units+=i.qty*(i.key==='kit'?20:1)});
+    var fee=GIFT==='sim'?GIFT_FEE:0,total=sub+fee;
     var short=MODE==='entrega'&&CART.length>0&&sub<MIN;
-    $('modeBox').hidden=!CART.length;
     $('giftBox').hidden=!CART.length;
+    [].forEach.call($('gift').children,function(b){b.setAttribute('aria-checked',String(b.dataset.gift===GIFT))});
+    $('giftmsg').textContent=(CART.length&&GIFT===null)?'Responda para continuar.':'';
+    $('feeRow').hidden=!(CART.length&&fee>0);
+    $('feeTxt').textContent='Embalagem de presente · 1 por pedido';$('feeVal').textContent=brl(fee);
+    $('modeBox').hidden=!CART.length;
     [].forEach.call($('mode').children,function(b){b.setAttribute('aria-checked',String(b.dataset.mode===MODE))});
-    [].forEach.call($('gift').children,function(b){b.setAttribute('aria-checked',String(GIFT!==null&&b.dataset.gift===(GIFT?'sim':'nao')))});
-    $('giftmsg').textContent=GIFT===null?'Responda para finalizar o orçamento.':(GIFT?'Embalagem de presente: '+potes+' × '+brl(GIFTFEE)+' = '+brl(fee)+' a mais.':'');
     $('minmsg').textContent=short?'Faltam '+brl(MIN-sub)+' para o pedido mínimo de entrega ('+brl(MIN)+'). Na retirada não há valor mínimo.':'';
     $('cnt').textContent=n;$('total').textContent=brl(total);
     var body=$('cartBody'),ck=$('checkout');
@@ -675,10 +689,8 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
         '<button class="rm" type="button" data-act="rm" data-key="'+i.key+'">Remover</button></div></li>';
     }).join('')+'</ul>';
     var lines=CART.map(function(i){return '- '+i.qty+'x '+i.label+' ('+i.sub+') = '+brl(i.price*i.qty)}).join('\n');
-    var msg='Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria de um orçamento para:\n\n'+lines+'\n\nSubtotal: '+brl(sub)+
-      '\nPresente: '+(GIFT===true?'Sim (embalagem '+potes+' × '+brl(GIFTFEE)+' = '+brl(fee)+')':'Não')+
-      '\nTotal estimado: '+brl(total)+'\n\nReceber por: '+(MODE==='entrega'?'Entrega (endereço): ':'Retirada (vamos combinar local e horário)')+
-      '\n\nPodem me confirmar valores e disponibilidade?';
+    var presente=GIFT==='sim'?'Sim, com embalagem de presente ('+brl(fee)+' por pedido)':'Não';
+    var msg='Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria de um orçamento para:\n\n'+lines+'\n\nSubtotal: '+brl(sub)+'\nPresente: '+presente+'\nTotal estimado: '+brl(total)+'\n\nReceber por: '+(MODE==='entrega'?'Entrega (endereço): ':'Retirada (vamos combinar local e horário)')+'\n\nPode me confirmar o valor, a disponibilidade e o prazo?';
     if(short||GIFT===null){ck.setAttribute('aria-disabled','true');ck.href='#'}else{ck.removeAttribute('aria-disabled');ck.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg)}
   }
   function openCart(){lastFocus=document.activeElement;$('ovl').hidden=false;lockScroll();$('closeCart').focus()}
@@ -700,13 +712,18 @@ footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transfor
   $('qPlus').addEventListener('click',function(){qty=Math.min(20,qty+1);$('qVal').textContent=qty});
   $('addBtn').addEventListener('click',function(){gate(function(){
     var s=sizeOf(st.ml),f=flOf(st.fl),v=varOf(f,st.vr);
+    if(f.consulta){
+      var u='https://wa.me/'+WA+'?text='+encodeURIComponent('Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria de consultar a disponibilidade de '+f.name+' (pote de '+s.ml+' ml). Pode me confirmar se tem e qual o valor?');
+      var w=window.open(u,'_blank');if(!w)location.href=u;
+      return;
+    }
     addItem('p|'+s.ml+'|'+f.id+'|'+v.id,v.label,'Pote de '+s.ml+' ml',priceOf(s,f),qty);
     qty=1;$('qVal').textContent=1;
   })});
   $('addKit').addEventListener('click',function(){gate(function(){addItem('kit','Kit Festa','20 potinhos de 40 ml, sabores a combinar',135,1)})});
   $('gift').addEventListener('click',function(e){
     var b=e.target.closest('[data-gift]');if(!b)return;
-    GIFT=b.dataset.gift==='sim';renderCart();
+    GIFT=b.dataset.gift;renderCart();
   });
   $('mode').addEventListener('click',function(e){
     var b=e.target.closest('[data-mode]');if(!b)return;
