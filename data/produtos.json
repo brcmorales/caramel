@@ -1,0 +1,291 @@
+{
+  "_ajuda": "Edite preços, sabores e regras da roleta aqui. Preço null = indisponível naquele tamanho.",
+  "whatsapp": "5511947992124",
+  "instagram": "https://www.instagram.com/potcaramel/",
+  "pedidoMinimoEntrega": null,
+  "tamanhos": [
+    {
+      "id": "40",
+      "ml": 40,
+      "rotulo": "40 ml",
+      "larg": 62,
+      "alt": 72,
+      "medidasMm": null
+    },
+    {
+      "id": "150",
+      "ml": 150,
+      "rotulo": "150 ml",
+      "larg": 92,
+      "alt": 104,
+      "medidasMm": null
+    },
+    {
+      "id": "180",
+      "ml": 180,
+      "rotulo": "180 ml",
+      "larg": 88,
+      "alt": 136,
+      "medidasMm": null
+    }
+  ],
+  "sabores": [
+    {
+      "id": "doce-de-leite",
+      "nome": "Doce de leite",
+      "descricao": "Cremoso, cor de caramelo e com gosto de infância. Pede colher grande.",
+      "foto": "img/doce-de-leite.webp",
+      "alt": "Pote de vidro com doce de leite cremoso",
+      "precos": {
+        "40": 7,
+        "150": 14,
+        "180": 16
+      },
+      "base": "doce-de-leite",
+      "variedade": "Tradicional",
+      "visual": {
+        "corpo": "#b87a3c",
+        "topo": "#c98a49"
+      }
+    },
+    {
+      "id": "doce-de-leite-avela",
+      "nome": "Doce de leite + creme de avelã",
+      "descricao": "As duas camadas no mesmo pote: o doce de leite abraçando o creme de avelã.",
+      "foto": "img/mao.webp",
+      "fotoPote": "img/mao-480.webp",
+      "alt": "Mão segurando pote de doce de leite com creme de avelã e tampa dourada com o selo do dachshund",
+      "precos": {
+        "40": 7,
+        "150": 15,
+        "180": 17
+      },
+      "base": "doce-de-leite",
+      "variedade": "Com creme de avelã",
+      "visual": {
+        "corpo": "#b87a3c",
+        "topo": "#5a3322"
+      }
+    },
+    {
+      "id": "doce-de-leite-coco",
+      "nome": "Doce de leite + coco ralado",
+      "base": "doce-de-leite",
+      "variedade": "Com coco ralado",
+      "descricao": "Doce de leite cremoso com coco ralado. Docinho de festa em versão pote.",
+      "foto": "img/doce-de-leite.webp",
+      "fotoPendente": "[FOTO: doce de leite + coco ralado 150 ml, vista 3/4]",
+      "precos": {
+        "40": 7,
+        "150": 14,
+        "180": 16
+      },
+      "visual": {
+        "corpo": "#b87a3c",
+        "topo": "#c98a49",
+        "flocos": "#f6ecd6"
+      },
+      "alt": "Pote de vidro com doce de leite"
+    },
+    {
+      "id": "avela",
+      "nome": "Creme de avelã",
+      "descricao": "Aveludado, intenso e achocolatado. Do tipo que some em três colheradas.",
+      "foto": "img/avela.webp",
+      "alt": "Pote de vidro com creme de avelã",
+      "precos": {
+        "40": 8
+      },
+      "base": "avela",
+      "variedade": "Tradicional",
+      "visual": {
+        "corpo": "#6b4128",
+        "topo": "#7b4d31"
+      }
+    },
+    {
+      "id": "pudim",
+      "nome": "Pudim",
+      "descricao": "Pudim de pote com calda de caramelo. Sem forma, sem desmanchar, só colher.",
+      "foto": "img/pudim.webp",
+      "alt": "Pote de vidro com pudim e calda de caramelo",
+      "precos": {
+        "150": 14
+      },
+      "base": "pudim",
+      "variedade": "Tradicional",
+      "visual": {
+        "corpo": "#e6bf6e",
+        "topo": "#9a4a14"
+      }
+    },
+    {
+      "id": "pudim-avela",
+      "nome": "Pudim + creme de avelã",
+      "descricao": "O pudim de sempre com um toque de creme de avelã.",
+      "foto": "img/pudim.webp",
+      "fotoPendente": "[FOTO: pudim + creme de avelã 150 ml, vista 3/4]",
+      "precos": {
+        "150": 15
+      },
+      "_nota": "Tamanho 150 ml assumido: na tabela enviada faltava o ml.",
+      "base": "pudim",
+      "variedade": "Com creme de avelã",
+      "visual": {
+        "corpo": "#e6bf6e",
+        "topo": "#4a2a1a"
+      },
+      "alt": "Pote de vidro com pudim + creme de avelã"
+    },
+    {
+      "id": "geleia",
+      "nome": "Geleia de amora",
+      "descricao": "Geleia caseira com pedaços de fruta. Disponibilidade sob consulta.",
+      "foto": "img/geleia.webp",
+      "alt": "Pote de vidro com geleia de amora",
+      "consulta": true,
+      "precos": {
+        "40": 7,
+        "150": 16
+      },
+      "base": "geleia",
+      "variedade": "Tradicional",
+      "visual": {
+        "corpo": "#4a1730",
+        "topo": "#6d1f3f"
+      }
+    }
+  ],
+  "kitFesta": {
+    "unidades": 20,
+    "tamanho": "40 ml",
+    "antecedenciaDias": 2,
+    "preco": null,
+    "foto": "img/kit-festa.webp",
+    "nota": "Escolha os sabores de 40 ml; o preço do kit ainda não foi informado."
+  },
+  "embalagemPresente": {
+    "preco": null,
+    "_nota": "Valor ainda não informado: combinado no WhatsApp."
+  },
+  "roleta": {
+    "ativa": true,
+    "giros": 1,
+    "validadeDias": 7,
+    "brindeMinimoPedido": 30,
+    "_aviso": "Pesos = chance relativa. Confira o custo dos brindes antes de publicar. Valores de validade e pedido mínimo do brinde são sugestões.",
+    "premios": [
+      {
+        "id": "d5",
+        "tipo": "percent",
+        "valor": 5,
+        "rotulo": [
+          "5%",
+          "OFF"
+        ],
+        "titulo": "5% de desconto",
+        "peso": 20
+      },
+      {
+        "id": "q1",
+        "tipo": "nada",
+        "rotulo": [
+          "Quase!"
+        ],
+        "titulo": "Quase!",
+        "peso": 14
+      },
+      {
+        "id": "r3",
+        "tipo": "fixed",
+        "valor": 3,
+        "rotulo": [
+          "R$ 3",
+          "OFF"
+        ],
+        "titulo": "R$ 3 de desconto",
+        "peso": 18
+      },
+      {
+        "id": "emb",
+        "tipo": "embalagem",
+        "rotulo": [
+          "Embalagem",
+          "grátis"
+        ],
+        "titulo": "Embalagem de presente grátis",
+        "peso": 12
+      },
+      {
+        "id": "d10",
+        "tipo": "percent",
+        "valor": 10,
+        "rotulo": [
+          "10%",
+          "OFF"
+        ],
+        "titulo": "10% de desconto",
+        "peso": 8
+      },
+      {
+        "id": "q2",
+        "tipo": "nada",
+        "rotulo": [
+          "Tão perto!"
+        ],
+        "titulo": "Tão perto!",
+        "peso": 14
+      },
+      {
+        "id": "pote",
+        "tipo": "brinde",
+        "rotulo": [
+          "Pote 40 ml",
+          "grátis"
+        ],
+        "titulo": "Um pote de 40 ml de brinde",
+        "peso": 5,
+        "opcoes": [
+          "doce-de-leite",
+          "doce-de-leite-avela",
+          "doce-de-leite-coco",
+          "geleia"
+        ]
+      },
+      {
+        "id": "gira",
+        "tipo": "giro",
+        "rotulo": [
+          "Gire",
+          "de novo"
+        ],
+        "titulo": "Giro extra",
+        "peso": 9
+      }
+    ]
+  },
+  "bases": [
+    {
+      "id": "doce-de-leite",
+      "nome": "Doce de leite",
+      "cor": "#b87a3c"
+    },
+    {
+      "id": "pudim",
+      "nome": "Pudim",
+      "cor": "#e6bf6e"
+    },
+    {
+      "id": "avela",
+      "nome": "Creme de avelã",
+      "cor": "#6b4128"
+    },
+    {
+      "id": "geleia",
+      "nome": "Geleia de amora",
+      "cor": "#5a1d3a"
+    }
+  ],
+  "_medidas": "Preencha medidas ({\"altura\":\"63 mm\",\"diametro\":\"Ø 63 mm\"}) em cada tamanho para mostrar as cotas no desenho do pote.",
+  "_tamanhos": "larg/alt = proporção do desenho (ilustrativa). Quando souber a medida real do vidro, preencha medidasMm: {\"alt\":63,\"diam\":63} e as cotas aparecem."
+}
