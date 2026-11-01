@@ -2,738 +2,294 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="CARAMEL Doces no Pote. Pudim, doce de leite, creme de avelã e geleia de amora em potes de vidro. Encomendas no WhatsApp, capital de São Paulo.">
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Caramel Doces no Pote</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>Caramel 2.0 · Doces no Pote artesanais em São Paulo</title>
+<meta name="description" content="Doce de leite, creme de avelã, pudim e geleia em potinhos de vidro com tampa dourada. Monte o seu pote, gire a roleta e peça pelo WhatsApp. Entrega na capital de São Paulo.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf3e6">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#faf3e6">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Caramel 2.0 · Doces no Pote">
+<meta property="og:description" content="Doce é sempre uma boa ideia. Monte o seu pote e gire a roleta de brindes.">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
-<style>
-/* Layout: editorial single column, generous air, thin lines. One bold moment: jars drawn to real scale. */
-:root{
-  --bg:#F8F2E6;
-  --surface:#FFFBF2;
-  --fg:#2A1A12;
-  --muted:#7B6454;
-  --accent:#9A5A25;
-  --accent-ink:#FFF8EA;
-  --line:#E2D4BD;
-  --tile:#F9F3DE;
-  --font-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
-  --font-body:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
-  color-scheme:light;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#1B120D;--surface:#241812;--fg:#F3E8D5;--muted:#B39C86;--accent:#D89D5C;--accent-ink:#1B120D;--line:#3A2A20;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#1B120D;--surface:#241812;--fg:#F3E8D5;--muted:#B39C86;--accent:#D89D5C;--accent-ink:#1B120D;--line:#3A2A20;
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth;overflow-x:clip}
-body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:17px;line-height:1.6;font-weight:300;padding-inline:20px;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1120px;margin-inline:auto}
-h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.05;margin:0;text-wrap:balance}
-p{margin:0}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:500}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;padding:14px 26px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:0;border-radius:999px;cursor:pointer;font-family:inherit}
-.btn:hover{filter:brightness(1.08)}
-.btn.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
-.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--accent);filter:none}
-
-/* header */
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);margin-inline:-20px;padding-inline:20px;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:44px;height:44px;border-radius:50%}
-.brand span{font-family:var(--font-display);font-size:24px;font-weight:600;letter-spacing:.14em}
-nav{display:flex;gap:28px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
-nav a{text-decoration:none;color:var(--muted)}
-nav a:hover{color:var(--fg)}
-@media(max-width:640px){nav{display:none}}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding-block:72px 96px}
-.hero h1{font-size:clamp(46px,7vw,92px);letter-spacing:-.01em;margin-block:18px 24px}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hero p.lead{max-width:44ch;color:var(--muted);font-size:19px}
-.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-.hero figure{margin:0;position:relative;min-width:0}
-.hero figure img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 62%;border-radius:2px}
-.hero figure::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--line);z-index:-1}
-.hero figcaption{margin-top:14px;font-size:13px;color:var(--muted);letter-spacing:.06em}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:40px;padding-block:48px 72px}.hero figure::before{inset:12px -6px -12px 12px}}
-
-section{padding-block:88px;border-top:1px solid var(--line)}
-.head{display:grid;gap:14px;max-width:640px;margin-bottom:48px}
-.head h2{font-size:clamp(36px,5vw,58px)}
-.head p{color:var(--muted)}
-
-/* configurator */
-.config{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:56px;align-items:start}
-.stage{background:var(--surface);border:1px solid var(--line);padding:28px 22px 24px;display:grid;gap:14px;position:sticky;top:96px;min-width:0}
-.stage svg{display:block;width:100%;max-width:340px;height:auto;margin-inline:auto;overflow:visible}
-.stage .cap{font-family:var(--font-display);font-size:34px;line-height:1;text-align:center}
-.stage .cap small{font-family:var(--font-body);font-size:13px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-left:6px}
-.group{margin-bottom:32px}
-.group h3{font-family:var(--font-body);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted);margin-bottom:14px}
-.sizes{display:grid;gap:10px;align-items:end;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.size{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:10px;min-width:0;padding:0;border:0;background:none;color:var(--fg);font:inherit;cursor:pointer;opacity:.7;transition:opacity .2s}
-.size svg{display:block;width:100%;height:auto;overflow:visible}
-.size:hover{opacity:1}
-.size .sl{display:grid;justify-items:center;line-height:1;padding-bottom:6px;border-bottom:2px solid transparent;width:100%}
-.size .sl b{font-family:var(--font-display);font-size:24px;font-weight:600}
-.size .sl small{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
-.size[aria-checked="true"]{opacity:1}
-.size[aria-checked="true"] .sl{border-bottom-color:var(--accent)}
-.size[aria-checked="true"] .sl b{color:var(--accent)}
-.size:disabled{opacity:.22;cursor:not-allowed}
-.flavors{display:flex;flex-wrap:wrap;gap:10px}
-.chip{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:transparent;color:var(--fg);padding:10px 18px 10px 12px;border-radius:999px;font-family:inherit;font-size:15px;cursor:pointer;font-weight:400}
-.chip i{width:16px;height:16px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
-.chip:hover:not(:disabled){border-color:var(--accent)}
-.chip[aria-checked="true"]{border-color:var(--accent);background:var(--surface);box-shadow:inset 0 0 0 1px var(--accent)}
-.note{font-size:14px;color:var(--muted);margin-top:12px;min-height:1.6em}
-.summary{border-top:1px solid var(--line);padding-top:28px;display:grid;gap:18px}
-.summary .price{font-family:var(--font-display);font-size:56px;line-height:1;font-weight:500;font-variant-numeric:tabular-nums}
-.summary .desc{max-width:52ch;color:var(--muted)}
-@media(max-width:860px){.config{grid-template-columns:1fr;gap:32px}.stage{position:static}}
-
-/* flavors */
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
-.card{background:var(--bg);display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;padding:28px;align-items:start}
-.card .tile{aspect-ratio:1;display:grid;place-items:center}
-.card .tile img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 10px 12px rgba(42,26,18,.2))}
-.card h3{font-size:34px;margin-bottom:10px}
-.card p.d{color:var(--muted);margin-bottom:16px}
-.card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:14px}
-.card dt{color:var(--accent);letter-spacing:.14em;text-transform:uppercase;font-size:11px;font-weight:500;padding-top:3px}
-.card dd{margin:0}
-.card button{margin-top:18px;background:none;border:0;border-bottom:1px solid var(--accent);color:var(--fg);font:inherit;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:0 0 3px;cursor:pointer}
-.card button:hover{color:var(--accent)}
-@media(max-width:980px){.cards{grid-template-columns:1fr}}
-@media(max-width:520px){.card{grid-template-columns:1fr;gap:20px;padding:20px}.card .tile{max-width:220px}}
-
-/* table */
-.tablewrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;min-width:600px;font-variant-numeric:tabular-nums}
-th{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--muted);text-align:left;padding:0 16px 14px 0;border-bottom:1px solid var(--fg)}
-td{padding:22px 16px 22px 0;border-bottom:1px solid var(--line);vertical-align:baseline}
-td.n{font-family:var(--font-display);font-size:32px;font-weight:600;line-height:1}
-td.p{font-family:var(--font-display);font-size:28px;line-height:1}
-td.m{color:var(--muted);font-size:15px}
-td.p.off{color:var(--muted);opacity:.45}
-.ask{font-family:var(--font-body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
-td.p[data-fl]:hover{color:var(--accent)}
-tbody tr{cursor:pointer;transition:background .2s}
-tbody tr:hover{background:var(--surface)}
-.tnote{margin-top:20px;color:var(--muted);font-size:15px;display:grid;gap:6px}
-
-/* kit */
-.kit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
-.kit .img{background:var(--tile);overflow:hidden}
-.kit .img img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
-.kit h2{font-size:clamp(36px,5vw,58px);margin-block:14px 18px}
-.kit .big{font-family:var(--font-display);font-size:64px;line-height:1;margin-block:22px 6px;font-variant-numeric:tabular-nums}
-.kit .sub{color:var(--muted);font-size:15px;margin-bottom:28px}
-@media(max-width:860px){.kit{grid-template-columns:1fr;gap:32px}}
-
-/* selo */
-.selo{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:64px;align-items:center}
-.selo .photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 72%}
-.selo .seal{display:grid;justify-items:center;gap:22px;text-align:center}
-.seal video,.seal img{width:min(100%,280px);aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;background:#F6EFE2}
-.seal p{color:var(--muted);max-width:30ch}
-@media(max-width:860px){.selo{grid-template-columns:1fr;gap:40px}}
-
-/* footer */
-footer{border-top:1px solid var(--line);padding-block:80px 56px;text-align:center;display:grid;justify-items:center;gap:18px}
-footer .tag{font-family:var(--font-display);font-style:italic;font-size:clamp(32px,5vw,52px);line-height:1.1;text-wrap:balance}
-footer .num{font-family:var(--font-display);font-size:40px;font-weight:600;letter-spacing:.04em;font-variant-numeric:tabular-nums}
-footer small{color:var(--muted);font-size:13px;letter-spacing:.1em;text-transform:uppercase}
-.copy{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center}
-
-/* cart */
-.cartbtn{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--fg);border:0;box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;padding:9px 16px;font:inherit;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;cursor:pointer}
-.cartbtn:hover{box-shadow:inset 0 0 0 1px var(--accent)}
-.cartbtn b{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:12px;letter-spacing:0;font-variant-numeric:tabular-nums}
-.buy{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px}
-.qty button{width:42px;height:46px;background:none;border:0;color:var(--fg);font-size:20px;cursor:pointer;font-family:inherit;border-radius:999px}
-.qty button:hover{color:var(--accent)}
-.qty output{min-width:28px;text-align:center;font-variant-numeric:tabular-nums;font-weight:400}
-.ovl{position:fixed;inset:0;z-index:30;background:rgba(24,12,6,.5);display:flex;justify-content:flex-end}
-.panel{width:min(440px,100%);height:100%;background:var(--bg);border-left:1px solid var(--line);display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) 24px calc(20px + env(safe-area-inset-bottom,0px))}
-.panel header{position:static;display:flex;align-items:center;justify-content:space-between;margin:0;padding:0 0 16px;border-bottom:1px solid var(--line);background:none;backdrop-filter:none}
-.panel h2{font-size:34px}
-.x{background:none;border:0;color:var(--fg);font-size:28px;line-height:1;cursor:pointer;padding:4px 8px}
-.x:hover{color:var(--accent)}
-.items{list-style:none;margin:0;padding:0;flex:1;overflow-y:auto;min-height:0}
-.items li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:18px 0;border-bottom:1px solid var(--line)}
-.items .t{font-family:var(--font-display);font-size:22px;line-height:1.15;font-weight:600}
-.items .s{color:var(--muted);font-size:14px}
-.items .pr{font-family:var(--font-display);font-size:22px;text-align:right;font-variant-numeric:tabular-nums}
-.items .row{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.items .qty button{width:34px;height:36px;font-size:18px}
-.rm{background:none;border:0;border-bottom:1px solid var(--line);color:var(--muted);font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;padding:0 0 2px}
-.rm:hover{color:var(--accent);border-color:var(--accent)}
-.empty{flex:1;display:grid;align-content:center;justify-items:start;gap:14px;color:var(--muted)}
-.empty strong{font-family:var(--font-display);font-size:30px;font-weight:500;color:var(--fg)}
-.tot{display:flex;justify-content:space-between;align-items:baseline;padding-top:18px}
-.tot span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.tot b{font-family:var(--font-display);font-size:42px;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
-.fin{display:grid;gap:10px;padding-top:16px}
-.fin .btn{justify-content:center}
-.fin .btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
-.fin small{color:var(--muted);font-size:13px;line-height:1.5}
-.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--fg);color:var(--bg);padding:12px 22px;border-radius:999px;font-size:14px;max-width:calc(100% - 32px);text-align:center}
-
-.ovl.center{justify-content:center;align-items:center;padding:16px}
-.modal{position:relative;width:min(460px,100%);max-height:100%;overflow-y:auto;background:var(--bg);border:1px solid var(--line);padding:36px 28px 28px;display:grid;gap:14px}
-.modal h2{font-size:36px}
-.modal .x{position:absolute;top:10px;right:10px}
-.modal p.sub2{color:var(--muted);font-size:15px}
-.field{display:grid;gap:6px}
-.field label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.field input{font:inherit;font-size:17px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:12px 14px;width:100%}
-.field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
-.err{color:#B3402A;font-size:14px;min-height:1.4em}
-:root[data-theme="dark"] .err{color:#F0907A}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#F0907A}}
-.who{margin:0;padding:12px 0;font-size:14px;color:var(--muted);border-bottom:1px solid var(--line)}
-.who b{color:var(--fg);font-weight:500}
-.who .rm{margin-left:8px}
-.mode{display:flex;gap:10px;flex-wrap:wrap;padding-top:14px}
-.mode .chip{padding:9px 20px}
-.minmsg{margin:0;padding-top:10px;font-size:14px;color:var(--accent);min-height:0}
-.minmsg:empty{display:none}
-.gtitle{margin:0;padding-top:14px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.feerow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:14px;font-size:14px;color:var(--muted)}
-.feerow b{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--fg);font-variant-numeric:tabular-nums}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-</style>
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/mao-480.webp" type="image/webp" media="(max-width: 760px)">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FoodEstablishment","name":"Caramel Doces no Pote","description":"Doces artesanais em pote de vidro, por encomenda.","servesCuisine":"Doces","areaServed":"São Paulo, SP","telephone":"+55 11 94799-2124","sameAs":["https://www.instagram.com/potcaramel/"]}
+</script>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <a class="brand" href="#topo" aria-label="Caramel Doces no Pote"><img src="img/logo.png" alt="" width="44" height="44"><span>CARAMEL</span></a>
-    <nav aria-label="Principal">
-      <a href="#potes">Potes</a><a href="#sabores">Sabores</a><a href="#valores">Valores</a><a href="#kit">Kit Festa</a><a href="https://www.instagram.com/potcaramel/" target="_blank" rel="noopener">Instagram</a>
-    </nav>
-    <button class="cartbtn" id="openCart" type="button" aria-haspopup="dialog">Carrinho <b id="cnt">0</b></button>
-  </div>
+<a class="skip" href="#monte">Pular para o conteúdo</a>
+
+<header class="top" id="topo">
+  <a class="brand" href="#inicio" aria-label="Caramel, início">
+    <img src="img/selo.webp" width="40" height="40" alt="">
+    <span>Caramel</span>
+  </a>
+  <nav class="nav" aria-label="Principal">
+    <a href="#monte">Monte o seu</a>
+    <a href="#sabores">Sabores</a>
+    <a href="#valores">Valores</a>
+    <a href="#kit-festa">Kit Festa</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#como-pedir">Como pedir</a>
+  </nav>
+  <button class="cart-btn" id="abrir-carrinho" type="button" aria-label="Abrir carrinho">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 8h14l-1.2 11H6.2L5 8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <span class="cart-count" id="contador" hidden>0</span>
+  </button>
 </header>
 
-<main id="topo">
-<div class="wrap">
-  <div class="hero">
-    <div>
-      <p class="eyebrow">Doces no pote · Capital SP</p>
-      <h1>Doce é sempre <em>uma boa ideia.</em></h1>
-      <p class="lead">Pudim, doce de leite, creme de avelã e geleia de amora, servidos em potes de vidro com tampa dourada. Feitos por encomenda em cinco tamanhos.</p>
-      <div class="actions">
-        <a class="btn" href="#potes">Escolher meu pote</a>
-        <a class="btn ghost" href="#valores">Ver valores</a>
-      </div>
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-copy">
+    <p class="eyebrow">Caramel 2.0 · doce de colher</p>
+    <h1>Doce é sempre<br>uma boa ideia.</h1>
+    <p class="lead">Potinhos de vidro com tampa dourada, feitos por encomenda em São Paulo. Escolha o sabor, o tamanho e peça em menos de um minuto.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#monte">Escolher meu pote</a>
+      <a class="btn ghost" href="#valores">Ver valores</a>
     </div>
-    <figure>
-      <img src="img/pote-mao.jpg" alt="Pote de doce de leite com tampa dourada e o selo do dachshund, segurado com uma das mãos">
-      <figcaption>Pote de 40 ml. A tampa leva o selo da casa.</figcaption>
-    </figure>
+    <button class="spin-teaser" type="button" data-abrir-roleta>
+      <span class="spin-dot" aria-hidden="true"></span>
+      <span><strong>Gire a roleta</strong> e ganhe desconto ou brinde</span>
+    </button>
   </div>
-</div>
+  <figure class="hero-photo">
+    <img src="img/mao.webp" srcset="img/mao-480.webp 480w, img/mao.webp 800w" sizes="(max-width: 760px) 78vw, 420px" width="800" height="1066" alt="Mão segurando um pote de doce de leite com creme de avelã, tampa dourada com o selo do dachshund Caramel" fetchpriority="high">
+  </figure>
+</section>
 
-<section id="potes"><div class="wrap">
-  <div class="head">
-    <p class="eyebrow">Monte o seu</p>
-    <h2>Escolha o pote e o sabor.</h2>
-    <p>Os cinco potes aparecem na mesma escala, com as medidas reais do vidro. Toque em um pote para ver as dimensões e o valor.</p>
-  </div>
-  <div class="config">
-    <div class="stage">
-      <svg id="bigjar" viewBox="0 0 104 134" role="img" aria-label="Pote de vidro com medidas"></svg>
-      <div class="cap">Pote de <span id="capMl">120</span><small>ml</small></div>
-    </div>
-    <div>
-      <div class="group">
-        <h3 id="lblSize">Tamanho · toque no pote</h3>
-        <div class="sizes" id="sizes" role="radiogroup" aria-labelledby="lblSize"></div>
+<section class="sec dark" id="monte" aria-labelledby="t-monte">
+  <div class="dark-in">
+    <header class="sec-head">
+      <p class="eyebrow light">Monte o seu</p>
+      <h2 id="t-monte">Escolha o seu pote</h2>
+    </header>
+    <div class="mk">
+      <div class="stage">
+        <div class="stage-art" id="stage-art"></div>
+        <div class="stage-info"><h3 id="stage-nome"></h3><p id="stage-sub"></p></div>
       </div>
-      <div class="group">
-        <h3 id="lblFlavor">Sabor</h3>
-        <div class="flavors" id="flavors" role="radiogroup" aria-labelledby="lblFlavor"></div>
-        <p class="note" id="note" aria-live="polite"></p>
-      </div>
-      <div class="group" id="varGroup" hidden>
-        <h3 id="lblVar">Variedade</h3>
-        <div class="flavors" id="vars" role="radiogroup" aria-labelledby="lblVar"></div>
-      </div>
-      <div class="summary">
-        <div class="price"><span id="price">R$ 13,00</span></div>
-        <p class="desc" id="desc"></p>
-        <div class="buy">
-          <div class="qty" id="qtyBox" role="group" aria-label="Quantidade"><button type="button" id="qMinus" aria-label="Diminuir">−</button><output id="qVal" aria-live="polite">1</output><button type="button" id="qPlus" aria-label="Aumentar">+</button></div>
-          <button class="btn" id="addBtn" type="button">Adicionar ao carrinho</button>
+      <div class="mk-ctl">
+        <p class="lbl" id="l-tam">Tamanho · toque no pote</p>
+        <div class="jars" id="pick-tamanho" role="radiogroup" aria-labelledby="l-tam"></div>
+        <p class="lbl" id="l-sabor">Sabor</p>
+        <div class="pills" id="pick-base" role="radiogroup" aria-labelledby="l-sabor"></div>
+        <p class="hint" id="hint-disp"></p>
+        <div id="var-wrap"><p class="lbl" id="l-var">Variedade</p><div class="pills" id="pick-var" role="radiogroup" aria-labelledby="l-var"></div></div>
+        <div class="buy-row">
+          <div class="qty" role="group" aria-label="Quantidade">
+            <button type="button" id="qtd-menos" aria-label="Diminuir quantidade">−</button>
+            <output id="qtd" aria-live="polite">1</output>
+            <button type="button" id="qtd-mais" aria-label="Aumentar quantidade">+</button>
+          </div>
+          <div class="price-box" aria-live="polite">
+            <span class="price-label" id="preco-rotulo">Total</span>
+            <span class="price" id="preco"><span class="price-cur">R$</span><span class="price-val" id="preco-val">0,00</span></span>
+          </div>
         </div>
+        <button class="btn primary wide" id="add" type="button">Adicionar ao carrinho</button>
       </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section id="sabores"><div class="wrap">
-  <div class="head">
+<section class="sec tint" id="sabores" aria-labelledby="t-sabores">
+  <header class="sec-head">
     <p class="eyebrow">Nossos doces</p>
-    <h2>Quatro sabores, um por pote.</h2>
-    <p>Cada receita vem em pote de vidro com tampa metálica, pronta para abrir e comer com colher.</p>
-  </div>
-  <div class="cards" id="cards"></div>
-</div></section>
+    <h2 id="t-sabores">Jeitos de pedir colher</h2>
+  </header>
+  <ul class="flavors" id="lista-sabores"></ul>
+</section>
 
-<section id="valores"><div class="wrap">
-  <div class="head">
-    <p class="eyebrow">Tabela de valores</p>
-    <h2>Quanto custa cada pote.</h2>
-    <p>Toque em um valor para escolher aquele pote e sabor lá em cima.</p>
-  </div>
-  <div class="tablewrap">
-    <table>
-      <thead><tr><th>Pote</th><th>Pudim</th><th>Doce de leite</th><th>Creme de avelã</th><th>Geleia de amora</th></tr></thead>
-      <tbody id="rows"></tbody>
-    </table>
-  </div>
-  <div class="tnote">
-    <p>Pudim de 120 a 240 ml. Doce de leite de 40 a 180 ml, tradicional ou com creme de avelã, pelo mesmo valor. Creme de avelã de 40 a 120 ml. Nos potes de 120 ml ou mais, o doce de leite e o creme de avelã custam R$ 1 a mais que o pudim. O pote de 40 ml custa R$ 7.</p>
-    <p>Geleia de amora (40 e 120 ml): sob consulta de disponibilidade. Toque em Consultar para falar com a gente no WhatsApp.</p>
-    <p>Para presente, a embalagem custa R$ 1,50 a mais por pedido. Você escolhe no carrinho.</p>
-    <p>Entregas e encomendas na capital de São Paulo. Pedido mínimo de R$ 50 para entrega. Retirada sem valor mínimo.</p>
-  </div>
-</div></section>
+<section class="sec" id="valores" aria-labelledby="t-valores">
+  <header class="sec-head">
+    <p class="eyebrow">Caramel 2.0</p>
+    <h2 id="t-valores">Tabela de valores</h2>
+    <p class="muted">Toque em um valor para escolher aquele pote.</p>
+  </header>
+  <div class="table" id="tabela" role="table" aria-label="Valores por sabor e tamanho"></div>
+</section>
 
-<section id="kit"><div class="wrap kit">
-  <div class="img"><img src="img/kit-festa.jpg" alt="Kit Festa com potinhos de 40 ml sobre uma tábua de madeira"></div>
-  <div>
-    <p class="eyebrow">Sob encomenda</p>
-    <h2>Kit Festa</h2>
-    <p style="color:var(--muted)">20 potinhos de 40 ml para aniversários, chás e lembrancinhas, com doce de leite e creme de avelã na combinação que você escolher. Geleia de amora sob consulta de disponibilidade.</p>
-    <div class="big">R$ 135,00</div>
-    <p class="sub">R$ 6,75 por potinho. Comprando avulso, os 20 sairiam por R$ 140,00. Os sabores são combinados com você no WhatsApp. Encomende com 2 dias de antecedência.</p>
-    <button class="btn" id="addKit" type="button">Adicionar ao carrinho</button>
+<section class="sec wheel-banner" aria-labelledby="t-roleta">
+  <div class="wb-inner">
+    <img class="wb-seal" src="img/selo.webp" width="96" height="96" alt="" loading="lazy">
+    <div>
+      <p class="eyebrow light">Roleta da Caramel</p>
+      <h2 id="t-roleta">Um giro, um mimo.</h2>
+      <p>Desconto, embalagem de presente ou até um potinho de brinde. Cada pessoa gira uma vez.</p>
+      <button class="btn gold" type="button" data-abrir-roleta>Girar a roleta</button>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="selo"><div class="wrap selo">
-  <div class="photo"><img src="img/tampas.jpg" alt="Fileiras de potes com tampa dourada e o selo CARAMEL Doce de Pote com o desenho de um dachshund"></div>
-  <div class="seal">
-    <video src="img/selo.mp4" poster="img/logo.png" preload="auto" autoplay muted loop playsinline aria-label="Selo animado da Caramel, com o dachshund"></video>
-    <h2 style="font-size:36px">O selo na tampa</h2>
-    <p>Todo pote sai com o dachshund que dá nome à casa. Caramel é o cachorro, o doce e a marca.</p>
+<section class="sec dark" id="kit-festa" aria-labelledby="t-kit">
+  <div class="dark-in">
+    <header class="sec-head">
+      <p class="eyebrow light">Aniversários, chás e lembrancinhas</p>
+      <h2 id="t-kit">Monte o Kit Festa</h2>
+      <p class="sub-d">20 potinhos de 40 ml com os sabores que você escolher. Encomenda com 2 dias de antecedência.</p>
+    </header>
+    <div class="mk">
+      <div class="stage kit-stage">
+        <div class="kit-grid" id="kit-grid" role="img" aria-label="Prévia dos 20 potinhos do kit"></div>
+        <div class="stage-info"><h3 id="kit-prog">0 de 20 potinhos</h3><p id="kit-sub">Toque no + para escolher os sabores.</p></div>
+      </div>
+      <div class="mk-ctl">
+        <p class="lbl">Sabores · potes de 40 ml</p>
+        <ul class="kit-list" id="kit-list"></ul>
+        <p class="kit-price" id="kit-preco"></p>
+        <a class="btn primary wide" id="kit-pedir" href="#" target="_blank" rel="noopener" aria-disabled="true">Pedir o Kit Festa</a>
+        <a class="link-d" id="kit-combinar" href="#" target="_blank" rel="noopener">Prefiro combinar os sabores no WhatsApp</a>
+      </div>
+    </div>
+    <img class="kit-photo" src="img/kit-festa.webp" width="750" height="500" loading="lazy" alt="Potinhos de doce de leite, creme de avelã, geleia e pudim sobre uma tábua de madeira">
   </div>
-</div></section>
+</section>
+
+<section class="sec tint story" id="historia" aria-labelledby="t-hist">
+  <div class="story-grid">
+    <div class="seal-video">
+      <video src="video/selo.mp4" poster="img/selo-poster.jpg" muted loop playsinline preload="none" id="selo-video" aria-label="Selo animado do dachshund Caramel" width="360" height="360"></video>
+    </div>
+    <div>
+      <p class="eyebrow">O selo na tampa</p>
+      <h2 id="t-hist">O cachorro, o doce e a marca.</h2>
+      <p>Caramel é um dachshund. Ele está em cada tampa dourada porque todo pote sai da cozinha com o mesmo cuidado: feito em pequena quantidade, por encomenda e para comer de colher.</p>
+      <img class="lids" src="img/tampas.webp" width="800" height="1067" loading="lazy" alt="Fileiras de tampas douradas com o selo do dachshund Caramel Doce de Pote">
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="depoimentos" aria-labelledby="t-dep">
+  <header class="sec-head">
+    <p class="eyebrow">Quem já provou</p>
+    <h2 id="t-dep">O que dizem do Caramel</h2>
+    <p class="muted" id="dep-resumo"></p>
+  </header>
+  <ul class="reviews" id="lista-dep"></ul>
+  <p class="empty-note" id="dep-vazio" hidden>Ainda não temos depoimentos publicados. Prove um pote e conte para a gente como foi.</p>
+
+  <form class="fb-form" id="form-fb" name="feedback" method="POST" action="/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="apelido" novalidate>
+    <h3>Conte como foi</h3>
+    <input type="hidden" name="form-name" value="feedback">
+    <p class="hp" aria-hidden="true"><label>Não preencha <input name="apelido" tabindex="-1" autocomplete="off"></label></p>
+    <fieldset class="field">
+      <legend>Sua nota</legend>
+      <div class="stars-in" id="stars-in" role="radiogroup" aria-label="Nota de 1 a 5 estrelas"></div>
+      <input type="hidden" name="nota" id="fb-nota">
+    </fieldset>
+    <label>Seu nome<input id="fb-nome" name="nome" autocomplete="name" autocapitalize="words" maxlength="60" required></label>
+    <label>Seu comentário<textarea id="fb-texto" name="comentario" rows="4" maxlength="500" required placeholder="Qual sabor você provou? O que mais gostou?"></textarea></label>
+    <div class="photo-pick">
+      <label class="photo-btn" for="fb-foto">Adicionar foto <small>(opcional)</small></label>
+      <input id="fb-foto" name="foto" type="file" accept="image/*">
+      <div class="photo-prev" id="fb-prev" hidden><img alt="Prévia da sua foto" width="56" height="56"><button type="button" class="rm" id="fb-rm">remover foto</button></div>
+    </div>
+    <label class="check"><input type="checkbox" name="autorizo" id="fb-ok" required> <span>Autorizo a Caramel a publicar meu nome, comentário e foto no site.</span></label>
+    <p class="err" id="fb-erro" role="alert" hidden></p>
+    <p class="ok-msg" id="fb-sucesso" role="status" hidden></p>
+    <button class="btn primary wide" type="submit" id="fb-enviar">Enviar depoimento</button>
+    <p class="muted small">Todo depoimento é lido pela Caramel antes de aparecer aqui.</p>
+  </form>
+</section>
+
+<section class="sec" id="como-pedir" aria-labelledby="t-como">
+  <header class="sec-head">
+    <p class="eyebrow">Simples assim</p>
+    <h2 id="t-como">Como pedir</h2>
+  </header>
+  <ol class="steps">
+    <li><span>1</span><div><strong>Monte o pote</strong><p>Escolha sabor, tamanho e quantidade.</p></div></li>
+    <li><span>2</span><div><strong>Abra o carrinho</strong><p>Confira os itens, use seu prêmio da roleta e preencha seu nome.</p></div></li>
+    <li><span>3</span><div><strong>Envie no WhatsApp</strong><p>A Caramel confirma valor, prazo, pagamento e entrega com você.</p></div></li>
+  </ol>
+
+  <div class="faq">
+    <h3>Entrega e retirada</h3>
+    <p>Entregamos na capital de São Paulo. A retirada não tem pedido mínimo. O pedido mínimo para entrega é confirmado no WhatsApp.</p>
+    <h3>Perguntas frequentes</h3>
+    <details><summary>Os doces são feitos na hora?</summary><p>São feitos por encomenda. Combine a data no WhatsApp; o Kit Festa pede 2 dias de antecedência.</p></details>
+    <details><summary>Como funciona a roleta?</summary><p>Você gira uma vez por aparelho. O prêmio fica guardado por <span data-validade>7</span> dias e é aplicado no carrinho. O brinde de pote vale para pedidos a partir de R$ <span data-brinde-min>30</span>.</p></details>
+    <details><summary>Posso pagar no site?</summary><p>Ainda não. O pedido vira uma mensagem pronta de WhatsApp e o pagamento é combinado por lá.</p></details>
+    <details><summary>E a geleia de amora?</summary><p>A geleia de amora é vendida sob consulta, porque depende da produção. Chame no WhatsApp para saber se tem e o valor.</p></details>
+  </div>
+</section>
 </main>
 
-<footer>
-  <div class="wrap" style="display:grid;justify-items:center;gap:18px">
-    <img src="img/logo.png" alt="" width="84" height="84" style="border-radius:50%">
-    <p class="tag">Doce é sempre uma boa ideia!</p>
-    <small>Capital SP · Encomendas no WhatsApp</small>
-    <small>Pedido mínimo de R$ 50 para entrega · Retirada sem mínimo</small>
-    <p class="num" id="num">(11) 94799-2124</p>
-    <small>Instagram <a href="https://www.instagram.com/potcaramel/" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">@potcaramel</a></small>
-    <div class="copy">
-      <a class="btn" id="waFoot" href="https://wa.me/5511947992124" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-      <a class="btn ghost" id="igFoot" href="https://www.instagram.com/potcaramel/" target="_blank" rel="noopener">Instagram @potcaramel</a>
-      <button class="btn ghost" id="copyBtn" type="button">Copiar número</button>
-    </div>
-    <small style="margin-top:28px">© Caramel Doces no Pote</small>
-  </div>
+<footer class="foot">
+  <img src="img/selo.webp" width="72" height="72" alt="" loading="lazy">
+  <p class="foot-tag">Caramel Doces no Pote</p>
+  <p>Capital de São Paulo · retirada sem mínimo</p>
+  <p class="foot-links"><a id="foot-wa" href="https://wa.me/5511947992124" target="_blank" rel="noopener">WhatsApp (11) 94799-2124</a><a href="https://www.instagram.com/potcaramel/" target="_blank" rel="noopener">@potcaramel</a></p>
 </footer>
 
-<div class="ovl" id="ovl" hidden>
-  <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-    <header><h2 id="cartTitle">Seu pedido</h2><button class="x" id="closeCart" type="button" aria-label="Fechar carrinho">×</button></header>
-    <p class="who" id="who" hidden></p>
-    <div id="cartBody" style="display:flex;flex-direction:column;flex:1;min-height:0"></div>
-    <div id="modeBox" hidden>
-      <div class="mode" id="mode" role="radiogroup" aria-label="Como receber o pedido">
-        <button type="button" class="chip" role="radio" data-mode="entrega" aria-checked="true">Entrega</button>
-        <button type="button" class="chip" role="radio" data-mode="retirada" aria-checked="false">Retirada</button>
-      </div>
-      <p class="minmsg" id="minmsg" role="status"></p>
-    </div>
-    <div id="giftBox" hidden>
-      <p class="gtitle" id="lblGift">É para presente?</p>
-      <div class="mode" id="gift" role="radiogroup" aria-labelledby="lblGift">
-        <button type="button" class="chip" role="radio" data-gift="nao" aria-checked="false">Não</button>
-        <button type="button" class="chip" role="radio" data-gift="sim" aria-checked="false">Sim, embalagem de presente (+ R$ 1,50 por pedido)</button>
-      </div>
-      <p class="minmsg" id="giftmsg" role="status"></p>
-    </div>
-    <div class="feerow" id="feeRow" hidden><span id="feeTxt"></span><b id="feeVal"></b></div>
-    <div class="tot"><span>Total</span><b id="total">R$ 0,00</b></div>
-    <div class="fin">
-      <a class="btn" id="checkout" href="#" target="_blank" rel="noopener" aria-disabled="true">Pedir orçamento no WhatsApp</a>
-      <small>O pedido vai escrito na mensagem, como um pedido de orçamento, com o seu nome. A Caramel confirma valor, prazo, pagamento e entrega pelo WhatsApp.</small>
-    </div>
-  </aside>
-</div>
+<button class="fab" id="fab-roleta" type="button" data-abrir-roleta>
+  <span class="fab-dot" aria-hidden="true"></span><span id="fab-texto">Gire e ganhe</span>
+</button>
 
-<div class="ovl center" id="regOvl" hidden>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="regTitle">
-    <button class="x" id="closeReg" type="button" aria-label="Fechar cadastro">×</button>
-    <p class="eyebrow">Antes de começar</p>
-    <h2 id="regTitle">Faça seu cadastro</h2>
-    <p class="sub2">Para usar o carrinho e falar com a gente, precisamos do seu nome e telefone. Eles seguem na mensagem do WhatsApp e servem só para atender você.</p>
-    <form id="regForm" novalidate>
-      <div style="display:grid;gap:14px">
-        <div class="field"><label for="rNome">Nome</label><input id="rNome" name="nome" type="text" autocomplete="name" maxlength="60" placeholder="Seu nome"></div>
-        <div class="field"><label for="rTel">Telefone</label><input id="rTel" name="tel" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="15" placeholder="(11) 99999-9999"></div>
-        <p class="err" id="regErr" role="alert"></p>
-        <button class="btn" type="submit" style="justify-content:center">Continuar</button>
-      </div>
-    </form>
+<!-- Roleta -->
+<dialog class="sheet wheel-sheet" id="dlg-roleta" aria-labelledby="t-wheel">
+  <div class="sheet-body">
+    <div class="grab" aria-hidden="true"></div>
+    <button class="x" type="button" data-fechar aria-label="Fechar">×</button>
+    <h2 id="t-wheel">Roleta da Caramel</h2>
+    <p class="muted" id="wheel-sub">Gire e veja o que o Caramel trouxe para você.</p>
+    <div class="wheel-wrap" id="wheel-wrap">
+      <div class="pointer" aria-hidden="true"></div>
+      <svg id="wheel" viewBox="-160 -160 320 320" role="img" aria-label="Roleta com oito prêmios"></svg>
+    </div>
+    <button class="btn primary wide" id="girar" type="button">Girar</button>
+    <div class="result" id="resultado" hidden aria-live="polite"></div>
   </div>
-</div>
-<div class="toast" id="toast" role="status" hidden></div>
+</dialog>
 
-<script>
-(function(){
-  var WA='5511947992124';
-  /* Medidas do vidro (catálogo do fabricante): d = diâmetro, h = altura, lid = diâmetro da tampa, tudo em mm */
-  var SIZES=[
-    {ml:40,price:7,d:44,h:47.7,lid:38,vidro:40,use:'Porção individual para provar ou presentear. É o tamanho do Kit Festa.'},
-    {ml:120,price:12,d:63,h:63,lid:58,vidro:122,use:'O tamanho do dia a dia.'},
-    {ml:150,price:13,d:66,h:66,lid:63,vidro:150,use:'O meio-termo entre o pote de 120 ml e o de 180 ml.'},
-    {ml:180,price:14,d:61,h:92.2,lid:58,vidro:190,use:'Para quem quer mais. Boa medida para dividir em dois.'},
-    {ml:240,price:18,d:70,h:80,lid:63,vidro:240,use:'O maior pote da casa.'}
-  ];
-  var FL=[
-    {id:'pudim',name:'Pudim',sizes:[120,150,180,240],body:'#EBC373',top:'#9B4A17',img:'img/pudim.png',
-      d:'Pudim cremoso coberto por calda de caramelo brilhante, servido direto no pote de vidro.',
-      tex:'Liso, firme e cremoso, com calda por cima',par:'Café coado e fruta fresca'},
-    {id:'doce-de-leite',name:'Doce de leite',extra:1,sizes:[40,120,150,180],body:'#B8793C',top:'#C98C4B',img:'img/doce-de-leite.png',
-      variants:[
-        {id:'tradicional',chip:'Tradicional',label:'Doce de leite',body:'#B8793C',top:'#C98C4B'},
-        {id:'avela',chip:'Com creme de avelã',label:'Doce de leite + creme de avelã',body:'#A86B38',top:'#5A331F',marble:true}
-      ],
-      d:'Doce de leite cremoso, de cor dourada e textura macia. Vem tradicional ou com creme de avelã.',
-      tex:'Macio, cremoso e espalhável',par:'Pão quentinho, queijo minas e sorvete de creme'},
-    {id:'creme-de-avela',name:'Creme de avelã',extra:1,sizes:[40,120],body:'#6E412A',top:'#7A4A31',img:'img/creme-de-avela.png',
-      d:'Creme de avelã com chocolate, aveludado e de sabor intenso.',
-      tex:'Aveludado e denso',par:'Morango, banana e pão de forma'},
-    {id:'geleia-de-amora',name:'Geleia de amora',consulta:true,sizes:[40,120],body:'#3B1526',top:'#55203A',img:'img/geleia-de-amora.png',
-      d:'Geleia de amora com pedaços da fruta, brilhante e levemente ácida.',
-      tex:'Brilhante, com pedaços de fruta',par:'Queijo cremoso, torradas e iogurte'}
-  ];
-  var st={ml:120,fl:'doce-de-leite',vr:'tradicional',nota:''};
-  var $=function(id){return document.getElementById(id)};
-  var brl=function(n){return 'R$ '+n.toFixed(2).replace('.',',')};
-  var mm=function(n){return String(n).replace('.',',')};
-  var sizeOf=function(ml){return SIZES.filter(function(s){return s.ml===ml})[0]};
-  var priceOf=function(s,f){return s.price+(s.ml>40?(f.extra||0):0)};
-  var ptxt=function(s,f){return f.consulta?'sob consulta':brl(priceOf(s,f))};
-  var flOf=function(id){return FL.filter(function(f){return f.id===id})[0]};
-  var varOf=function(f,id){
-    if(!f.variants)return {id:'',chip:'',label:f.name,body:f.body,top:f.top};
-    return f.variants.filter(function(v){return v.id===id})[0]||f.variants[0];
-  };
-  var listMl=function(a){var t=a.map(function(x){return x}),l=t.pop();return t.length?t.join(', ')+' e '+l+' ml':l+' ml'};
+<!-- Carrinho -->
+<dialog class="sheet cart-sheet" id="dlg-carrinho" aria-labelledby="t-cart">
+  <div class="sheet-body">
+    <div class="grab" id="grab-cart" aria-hidden="true"></div>
+    <button class="x" type="button" data-fechar aria-label="Fechar">×</button>
+    <h2 id="t-cart">Seu carrinho</h2>
+    <div id="cart-vazio" class="empty" hidden>
+      <img src="img/selo.webp" width="88" height="88" alt="" loading="lazy">
+      <p><strong>Carrinho vazio</strong></p>
+      <p class="muted">Monte um pote e ele aparece aqui.</p>
+      <a class="btn primary" href="#monte" data-fechar>Montar meu pote</a>
+    </div>
+    <div id="cart-cheio">
+      <ul class="cart-list" id="cart-list"></ul>
+      <label class="check"><input type="checkbox" id="presente"> <span>Embalagem para presente <small id="presente-info"></small></span></label>
+      <div id="premio-box" class="prize-box" hidden></div>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="t-sub">R$ 0,00</dd></div>
+        <div id="t-desc-row" hidden><dt id="t-desc-rot">Desconto</dt><dd id="t-desc">−R$ 0,00</dd></div>
+        <div class="grand"><dt>Total</dt><dd id="t-total">R$ 0,00</dd></div>
+      </dl>
+      <p class="warn" id="aviso-min" hidden></p>
+      <form id="form-pedido" novalidate>
+        <label>Seu nome<input id="f-nome" name="nome" autocomplete="name" autocapitalize="words" enterkeyhint="next" required></label>
+        <label>Telefone<input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" placeholder="(11) 90000-0000"></label>
+        <fieldset class="seg" role="radiogroup" aria-label="Entrega ou retirada">
+          <label><input type="radio" name="modo" value="Retirada" checked><span>Retirada</span></label>
+          <label><input type="radio" name="modo" value="Entrega"><span>Entrega</span></label>
+        </fieldset>
+        <label>Observações<textarea id="f-obs" name="obs" rows="2" enterkeyhint="done" placeholder="Data desejada, endereço, alergias…"></textarea></label>
+        <p class="err" id="f-erro" role="alert" hidden></p>
+        <button class="btn primary wide" type="submit">Pedir no WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
-  /* Jar drawing in millimetres. Local box: width d, height h + 1,4 (lid sits 1,4 mm above the rim). */
-  var uid=0;
-  function jarInner(s,c){
-    var id='j'+(uid++),d=s.d,h=s.h,n=s.lid,yt=1.4,lh=+(s.lid*.16).toFixed(2),lw=Math.min(s.lid+3,d);
-    var yf=yt+h*.1,ys=yf+h*.2,yb=yt+h,r=Math.min(5,d*.12),nx0=(d-n)/2,nx1=(d+n)/2,k=h*.09,yFill=yf+h*.1;
-    var g='M'+nx0+' '+yt+' L'+nx1+' '+yt+' L'+nx1+' '+yf+' C'+nx1+' '+(yf+k)+' '+d+' '+(ys-k)+' '+d+' '+ys+
-      ' L'+d+' '+(yb-r)+' Q'+d+' '+yb+' '+(d-r)+' '+yb+' L'+r+' '+yb+' Q0 '+yb+' 0 '+(yb-r)+
-      ' L0 '+ys+' C0 '+(ys-k)+' '+nx0+' '+(yf+k)+' '+nx0+' '+yf+' Z';
-    var o='<defs><clipPath id="c'+id+'"><path d="'+g+'"/></clipPath>'+
-      '<linearGradient id="g'+id+'" x1="0" x2="1"><stop offset="0" stop-color="#8E6A1E"/><stop offset=".3" stop-color="#E7CB72"/><stop offset=".55" stop-color="#B8922F"/><stop offset="1" stop-color="#7A5A17"/></linearGradient></defs>';
-    o+='<path d="'+g+'" fill="#ffffff" fill-opacity=".1"/>';
-    o+='<g clip-path="url(#c'+id+')">';
-    o+='<rect x="0" y="'+yFill+'" width="'+d+'" height="'+(yb-yFill)+'" fill="'+c.body+'"/>';
-    if(c.pudim){
-      o+='<rect x="0" y="'+yFill+'" width="'+d+'" height="'+((yb-yFill)*.17)+'" fill="'+c.top+'"/>';
-    }else{
-      o+='<ellipse cx="'+(d/2)+'" cy="'+yFill+'" rx="'+(d*.36)+'" ry="'+(h*.035)+'" fill="'+c.top+'"/>';
-    }
-    if(c.marble){
-      var y1=yFill+h*.1,y2=yFill+h*.2;
-      o+='<path d="M'+(d*.08)+' '+y1+' q'+(d*.14)+' -'+(h*.07)+' '+(d*.28)+' 0 t'+(d*.28)+' 0 t'+(d*.28)+' 0" stroke="'+c.top+'" stroke-width="2" fill="none" stroke-opacity=".75"/>';
-      o+='<path d="M'+(d*.08)+' '+y2+' q'+(d*.14)+' '+(h*.07)+' '+(d*.28)+' 0 t'+(d*.28)+' 0 t'+(d*.28)+' 0" stroke="'+c.top+'" stroke-width="1.6" fill="none" stroke-opacity=".6"/>';
-    }
-    o+='<rect x="'+(d*.1)+'" y="'+ys+'" width="'+(d*.07)+'" height="'+(yb-ys-r)+'" rx="'+(d*.035)+'" fill="#ffffff" fill-opacity=".26"/>';
-    o+='</g>';
-    o+='<path d="'+g+'" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="1.2" vector-effect="non-scaling-stroke"/>';
-    var lx=(d-lw)/2;
-    o+='<rect x="'+lx+'" y="0" width="'+lw+'" height="'+lh+'" rx="1.2" fill="url(#g'+id+')"/>';
-    o+='<rect x="'+lx+'" y="'+(lh-1.3)+'" width="'+lw+'" height="1.3" rx=".6" fill="#6E5214" fill-opacity=".45"/>';
-    o+='<rect x="'+(lx+lw*.08)+'" y="1" width="'+(lw*.84)+'" height=".9" rx=".4" fill="#FFF3C4" fill-opacity=".65"/>';
-    return o;
-  }
-  function colors(f,v){return {body:v.body,top:v.top,pudim:f.id==='pudim',marble:!!v.marble}}
-
-  function renderSizes(c,f){
-    var box=$('sizes');
-    box.style.gridTemplateColumns=SIZES.map(function(s){return s.d+'fr'}).join(' ');
-    box.innerHTML=SIZES.map(function(s){
-      var ok=f.sizes.indexOf(s.ml)>=0,H=(s.h+1.4).toFixed(1);
-      return '<button type="button" class="size" role="radio" data-ml="'+s.ml+'" aria-checked="'+(s.ml===st.ml)+'" tabindex="'+(s.ml===st.ml?0:-1)+'"'+(ok?'':' disabled')+
-        ' aria-label="Pote de '+s.ml+' ml, '+ptxt(s,f)+(ok?'':', indisponível neste sabor')+'">'+
-        '<svg viewBox="0 0 '+s.d+' '+H+'" aria-hidden="true" style="color:var(--fg)">'+jarInner(s,c)+'</svg>'+
-        '<span class="sl"><b>'+s.ml+'</b><small>ml</small></span></button>';
-    }).join('');
-  }
-  function renderFlavors(){
-    $('flavors').innerHTML=FL.map(function(f){
-      return '<button type="button" class="chip" role="radio" data-id="'+f.id+'" aria-checked="'+(f.id===st.fl)+'"><i style="background:'+f.body+'"></i>'+f.name+'</button>';
-    }).join('');
-  }
-  function renderVars(f){
-    var g=$('varGroup');
-    if(!f.variants){g.hidden=true;$('vars').innerHTML='';return}
-    g.hidden=false;
-    $('vars').innerHTML=f.variants.map(function(v){
-      return '<button type="button" class="chip" role="radio" data-v="'+v.id+'" aria-checked="'+(v.id===st.vr)+'"><i style="background:'+v.body+'"></i>'+v.chip+'</button>';
-    }).join('');
-  }
-  function renderStage(s,c){
-    var H=s.h+1.4,W=104,base=116,cx=46,x0=cx-s.d/2,y0=base-H,top=y0+1.4,xr=x0+s.d+5;
-    var dims='<g style="color:var(--muted)" stroke="currentColor" stroke-width=".5" fill="none">'+
-      '<line x1="'+x0+'" y1="'+(base+5)+'" x2="'+(x0+s.d)+'" y2="'+(base+5)+'"/>'+
-      '<line x1="'+x0+'" y1="'+(base+3)+'" x2="'+x0+'" y2="'+(base+7)+'"/>'+
-      '<line x1="'+(x0+s.d)+'" y1="'+(base+3)+'" x2="'+(x0+s.d)+'" y2="'+(base+7)+'"/>'+
-      '<line x1="'+xr+'" y1="'+top+'" x2="'+xr+'" y2="'+base+'"/>'+
-      '<line x1="'+(xr-2)+'" y1="'+top+'" x2="'+(xr+2)+'" y2="'+top+'"/>'+
-      '<line x1="'+(xr-2)+'" y1="'+base+'" x2="'+(xr+2)+'" y2="'+base+'"/>'+
-      '<text x="'+cx+'" y="'+(base+12)+'" text-anchor="middle" font-size="4.2" fill="currentColor" stroke="none" style="font-family:var(--font-body)">Ø '+mm(s.d)+' mm</text>'+
-      '<text x="'+(xr+3)+'" y="'+((top+base)/2+1.5)+'" font-size="4.2" fill="currentColor" stroke="none" style="font-family:var(--font-body)">'+mm(s.h)+' mm</text>'+
-      '</g>';
-    var shelf='<line x1="3" y1="'+base+'" x2="'+(W-3)+'" y2="'+base+'" stroke="currentColor" stroke-opacity=".35" stroke-width=".5" style="color:var(--muted)"/>';
-    var svg=$('bigjar');
-    svg.setAttribute('aria-label','Pote de '+s.ml+' ml: diâmetro '+mm(s.d)+' mm, altura '+mm(s.h)+' mm');
-    svg.innerHTML=shelf+'<g transform="translate('+x0+' '+y0+')" style="color:var(--fg)">'+jarInner(s,c)+'</g>'+dims;
-    $('capMl').textContent=s.ml;
-  }
-  function update(){
-    var s=sizeOf(st.ml),f=flOf(st.fl),v=varOf(f,st.vr),c=colors(f,v);
-    st.vr=v.id;
-    renderSizes(c,f);renderFlavors();renderVars(f);renderStage(s,c);
-    var ask=!!f.consulta;
-    $('price').textContent=ask?'Sob consulta':brl(priceOf(s,f));
-    $('qtyBox').hidden=ask;
-    $('addBtn').textContent=ask?'Consultar disponibilidade':'Adicionar ao carrinho';
-    $('desc').textContent=v.label+' em pote de '+s.ml+' ml. '+s.use+(ask?' Sabor sob consulta: confirme a disponibilidade pelo WhatsApp antes de pedir.':'');
-    $('note').textContent=(st.nota?st.nota+' ':'')+f.name+': potes de '+listMl(f.sizes)+'.';
-  }
-  function nearest(list,ml){return list.reduce(function(a,b){return Math.abs(b-ml)<Math.abs(a-ml)?b:a})}
-  function setFlavor(id){
-    var f=flOf(id);st.fl=id;st.vr=f.variants?f.variants[0].id:'';st.nota='';
-    if(f.sizes.indexOf(st.ml)<0){
-      st.ml=nearest(f.sizes,st.ml);
-      st.nota='Esse sabor não é feito no tamanho anterior, então mudamos para '+st.ml+' ml.';
-    }
-  }
-  function pick(grp,sel,cb){
-    $(grp).addEventListener('click',function(e){
-      var b=e.target.closest(sel);if(b&&!b.disabled)cb(b);
-    });
-    $(grp).addEventListener('keydown',function(e){
-      var keys={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1};
-      if(!keys[e.key])return;
-      var list=[].slice.call($(grp).querySelectorAll(sel+':not(:disabled)'));
-      var i=list.indexOf(document.activeElement);if(i<0)return;
-      e.preventDefault();var n=list[(i+keys[e.key]+list.length)%list.length];cb(n);
-      var again=$(grp).querySelector(sel+'[aria-checked="true"]');if(again)again.focus();
-    });
-  }
-  pick('sizes','.size',function(b){st.ml=+b.dataset.ml;st.nota='';update();var a=$('sizes').querySelector('[aria-checked="true"]');if(a)a.focus({preventScroll:true})});
-  pick('flavors','.chip',function(b){setFlavor(b.dataset.id);update();var a=$('flavors').querySelector('[aria-checked="true"]');if(a)a.focus({preventScroll:true})});
-  pick('vars','.chip',function(b){st.vr=b.dataset.v;st.nota='';update();var a=$('vars').querySelector('[aria-checked="true"]');if(a)a.focus({preventScroll:true})});
-
-  /* flavor cards */
-  $('cards').innerHTML=FL.map(function(f){
-    var extra=(f.variants?'<dt>Variedades</dt><dd>'+f.variants.map(function(v){return v.chip}).join(' · ')+'</dd>':'')+(f.consulta?'<dt>Valor</dt><dd>Sob consulta de disponibilidade</dd>':'');
-    return '<article class="card"><div class="tile"><img src="'+f.img+'" alt="Pote de '+f.name+'"></div><div>'+
-      '<h3>'+f.name+'</h3><p class="d">'+f.d+'</p>'+
-      '<dl><dt>Textura</dt><dd>'+f.tex+'</dd><dt>Combina</dt><dd>'+f.par+'</dd><dt>Tamanhos</dt><dd>'+f.sizes.map(function(x){return x+' ml'}).join(' · ')+'</dd>'+extra+'</dl>'+
-      '<button type="button" data-pick="'+f.id+'">'+(f.consulta?'Consultar disponibilidade':'Montar este pote')+'</button></div></article>';
-  }).join('');
-  $('cards').addEventListener('click',function(e){
-    var b=e.target.closest('[data-pick]');if(!b)return;
-    setFlavor(b.dataset.pick);update();$('potes').scrollIntoView({behavior:'smooth'});
-  });
-
-  /* table */
-  $('rows').innerHTML=SIZES.map(function(s){
-    return '<tr data-ml="'+s.ml+'" tabindex="0"><td class="n">'+s.ml+' ml</td>'+
-      FL.map(function(f){
-        return f.sizes.indexOf(s.ml)>=0?'<td class="p" data-fl="'+f.id+'">'+(f.consulta?'<span class="ask">Consultar</span>':brl(priceOf(s,f)).replace(',00',''))+'</td>':'<td class="p off" aria-label="indisponível">—</td>';
-      }).join('')+'</tr>';
-  }).join('');
-  function rowGo(ml,flId){
-    var f=flOf(flId||st.fl);
-    if(f.sizes.indexOf(ml)<0)f=FL.filter(function(x){return x.sizes.indexOf(ml)>=0})[0];
-    st.fl=f.id;st.vr=f.variants?f.variants[0].id:'';st.ml=ml;st.nota='';
-    update();$('potes').scrollIntoView({behavior:'smooth'});
-  }
-  $('rows').addEventListener('click',function(e){
-    var tr=e.target.closest('tr');if(!tr)return;
-    var td=e.target.closest('[data-fl]');rowGo(+tr.dataset.ml,td?td.dataset.fl:null);
-  });
-  $('rows').addEventListener('keydown',function(e){if(e.key==='Enter'){var tr=e.target.closest('tr');if(tr)rowGo(+tr.dataset.ml,null)}});
-
-  /* copy number */
-  $('copyBtn').addEventListener('click',function(){
-    var t='(11) 94799-2124',b=this,ok=function(){b.textContent='Número copiado';setTimeout(function(){b.textContent='Copiar número'},2000)};
-    function sel(){var r=document.createRange();r.selectNodeContents($('num'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
-    try{navigator.clipboard.writeText(t).then(ok,sel)}catch(err){sel()}
-  });
-
-  /* customer registration, cart and WhatsApp */
-  var CART=[],qty=1,lastFocus=null,tt,CUST=null,pending=null,MODE='entrega',MIN=50,GIFT=null,GIFT_FEE=1.5;
-  try{if(localStorage.getItem('caramel-modo')==='retirada')MODE='retirada'}catch(e){}
-  try{CUST=JSON.parse(localStorage.getItem('caramel-cliente')||'null')}catch(e){CUST=null}
-  if(!(CUST&&CUST.nome&&CUST.tel))CUST=null;
-  function lockScroll(){document.body.style.overflow=(!$('ovl').hidden||!$('regOvl').hidden)?'hidden':''}
-  function gate(cb){if(CUST){cb();return}pending=cb;openReg()}
-  function openReg(){
-    lastFocus=document.activeElement;
-    $('rNome').value=CUST?CUST.nome:'';$('rTel').value=CUST?CUST.tel:'';$('regErr').textContent='';
-    $('regOvl').hidden=false;lockScroll();$('rNome').focus();
-  }
-  function closeReg(keep){$('regOvl').hidden=true;if(!keep)pending=null;lockScroll();if(!keep&&lastFocus&&lastFocus.focus)lastFocus.focus()}
-  $('closeReg').addEventListener('click',function(){closeReg(false)});
-  $('regOvl').addEventListener('click',function(e){if(e.target===$('regOvl'))closeReg(false)});
-  $('rTel').addEventListener('input',function(){
-    var d=this.value.replace(/\D/g,'').slice(0,11),o=d;
-    if(d.length>2)o='('+d.slice(0,2)+') '+d.slice(2);
-    if(d.length>7)o='('+d.slice(0,2)+') '+d.slice(2,d.length-4)+'-'+d.slice(d.length-4);
-    this.value=o;
-  });
-  $('regForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var nome=$('rNome').value.trim().replace(/\s+/g,' '),tel=$('rTel').value.trim(),dig=tel.replace(/\D/g,''),err='',el=null;
-    if(nome.length<2){err='Digite seu nome.';el=$('rNome')}
-    else if(dig.length<10||dig.length>11){err='Digite o telefone com DDD, por exemplo (11) 99999-9999.';el=$('rTel')}
-    $('regErr').textContent=err;
-    if(err){el.focus();return}
-    CUST={nome:nome,tel:tel};
-    try{localStorage.setItem('caramel-cliente',JSON.stringify(CUST))}catch(x){}
-    var go=pending;pending=null;closeReg(true);renderCart();
-    if(go)go();
-  });
-  function who(){return CUST?CUST.nome+' (telefone '+CUST.tel+')':'______'}
-  function waGeneric(){
-    return 'https://wa.me/'+WA+'?text='+encodeURIComponent('Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria que vocês me adoçassem com: ');
-  }
-  $('waFoot').addEventListener('click',function(e){
-    if(CUST){this.href=waGeneric();return}
-    e.preventDefault();
-    gate(function(){var u=waGeneric(),w=window.open(u,'_blank');if(!w)location.href=u});
-  });
-
-  try{CART=JSON.parse(localStorage.getItem('caramel-cart')||'[]').filter(function(i){return i&&typeof i.key==='string'&&isFinite(i.price)&&i.qty>0&&i.qty<100})}catch(e){CART=[]}
-  CART=CART.filter(function(i){
-    if(i.key==='kit')return true;
-    if(i.key.indexOf('p|')!==0)return false;
-    var p=i.key.split('|'),s=sizeOf(parseInt(p[1],10)),f=flOf(p[2]);
-    if(!s||!f||f.consulta||f.sizes.indexOf(s.ml)<0)return false;
-    i.price=priceOf(s,f);return true;
-  });
-  function saveCart(){try{localStorage.setItem('caramel-cart',JSON.stringify(CART))}catch(e){}}
-  function toast(t){var el=$('toast');el.textContent=t;el.hidden=false;clearTimeout(tt);tt=setTimeout(function(){el.hidden=true},2200)}
-  function addItem(key,label,sub,price,n){
-    var f=CART.filter(function(i){return i.key===key})[0];
-    if(f){f.qty=Math.min(99,f.qty+n)}else{CART.push({key:key,label:label,sub:sub,price:price,qty:n})}
-    saveCart();renderCart();toast(n+'x '+label+' no carrinho');
-  }
-  function renderCart(){
-    $('waFoot').href=waGeneric();
-    var wh=$('who');wh.textContent='';
-    if(CUST){
-      wh.appendChild(document.createTextNode('Cliente: '));
-      var bn=document.createElement('b');bn.textContent=CUST.nome;wh.appendChild(bn);
-      wh.appendChild(document.createTextNode(' · '+CUST.tel+' '));
-      var eb=document.createElement('button');eb.type='button';eb.className='rm';eb.textContent='Alterar';eb.addEventListener('click',openReg);wh.appendChild(eb);
-      wh.hidden=false;
-    }else{wh.hidden=true}
-    var n=0,sub=0,units=0;CART.forEach(function(i){n+=i.qty;sub+=i.qty*i.price;units+=i.qty*(i.key==='kit'?20:1)});
-    var fee=GIFT==='sim'?GIFT_FEE:0,total=sub+fee;
-    var short=MODE==='entrega'&&CART.length>0&&sub<MIN;
-    $('giftBox').hidden=!CART.length;
-    [].forEach.call($('gift').children,function(b){b.setAttribute('aria-checked',String(b.dataset.gift===GIFT))});
-    $('giftmsg').textContent=(CART.length&&GIFT===null)?'Responda para continuar.':'';
-    $('feeRow').hidden=!(CART.length&&fee>0);
-    $('feeTxt').textContent='Embalagem de presente · 1 por pedido';$('feeVal').textContent=brl(fee);
-    $('modeBox').hidden=!CART.length;
-    [].forEach.call($('mode').children,function(b){b.setAttribute('aria-checked',String(b.dataset.mode===MODE))});
-    $('minmsg').textContent=short?'Faltam '+brl(MIN-sub)+' para o pedido mínimo de entrega ('+brl(MIN)+'). Na retirada não há valor mínimo.':'';
-    $('cnt').textContent=n;$('total').textContent=brl(total);
-    var body=$('cartBody'),ck=$('checkout');
-    if(!CART.length){
-      body.innerHTML='<div class="empty"><strong>Seu carrinho está vazio.</strong><p>Escolha um pote e um sabor para começar.</p><button class="btn ghost" type="button" data-close="1">Escolher doces</button></div>';
-      ck.setAttribute('aria-disabled','true');ck.href='#';return;
-    }
-    body.innerHTML='<ul class="items">'+CART.map(function(i){
-      return '<li><div><div class="t">'+i.label+'</div><div class="s">'+i.sub+' · '+brl(i.price)+' cada</div></div><div class="pr">'+brl(i.price*i.qty)+'</div>'+
-        '<div class="row"><div class="qty" role="group" aria-label="Quantidade de '+i.label+'"><button type="button" data-act="dec" data-key="'+i.key+'" aria-label="Diminuir">−</button><output>'+i.qty+'</output><button type="button" data-act="inc" data-key="'+i.key+'" aria-label="Aumentar">+</button></div>'+
-        '<button class="rm" type="button" data-act="rm" data-key="'+i.key+'">Remover</button></div></li>';
-    }).join('')+'</ul>';
-    var lines=CART.map(function(i){return '- '+i.qty+'x '+i.label+' ('+i.sub+') = '+brl(i.price*i.qty)}).join('\n');
-    var presente=GIFT==='sim'?'Sim, com embalagem de presente ('+brl(fee)+' por pedido)':'Não';
-    var msg='Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria de um orçamento para:\n\n'+lines+'\n\nSubtotal: '+brl(sub)+'\nPresente: '+presente+'\nTotal estimado: '+brl(total)+'\n\nReceber por: '+(MODE==='entrega'?'Entrega (endereço): ':'Retirada (vamos combinar local e horário)')+'\n\nPode me confirmar o valor, a disponibilidade e o prazo?';
-    if(short||GIFT===null){ck.setAttribute('aria-disabled','true');ck.href='#'}else{ck.removeAttribute('aria-disabled');ck.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg)}
-  }
-  function openCart(){lastFocus=document.activeElement;$('ovl').hidden=false;lockScroll();$('closeCart').focus()}
-  function closeCart(){$('ovl').hidden=true;lockScroll();if(lastFocus&&lastFocus.focus)lastFocus.focus()}
-  $('openCart').addEventListener('click',function(){gate(openCart)});
-  $('closeCart').addEventListener('click',closeCart);
-  $('ovl').addEventListener('click',function(e){if(e.target===$('ovl')||e.target.closest('[data-close]')){closeCart();if(e.target.closest('[data-close]'))$('potes').scrollIntoView({behavior:'smooth'})}});
-  document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;if(!$('regOvl').hidden)closeReg(false);else if(!$('ovl').hidden)closeCart()});
-  $('cartBody').addEventListener('click',function(e){
-    var b=e.target.closest('[data-act]');if(!b)return;
-    var it=CART.filter(function(i){return i.key===b.dataset.key})[0];if(!it)return;
-    if(b.dataset.act==='inc')it.qty=Math.min(99,it.qty+1);
-    if(b.dataset.act==='dec')it.qty-=1;
-    if(b.dataset.act==='rm'||it.qty<1)CART=CART.filter(function(i){return i!==it});
-    saveCart();renderCart();
-  });
-  $('checkout').addEventListener('click',function(e){if(this.getAttribute('aria-disabled')==='true')e.preventDefault()});
-  $('qMinus').addEventListener('click',function(){qty=Math.max(1,qty-1);$('qVal').textContent=qty});
-  $('qPlus').addEventListener('click',function(){qty=Math.min(20,qty+1);$('qVal').textContent=qty});
-  $('addBtn').addEventListener('click',function(){gate(function(){
-    var s=sizeOf(st.ml),f=flOf(st.fl),v=varOf(f,st.vr);
-    if(f.consulta){
-      var u='https://wa.me/'+WA+'?text='+encodeURIComponent('Olá! Meu nome é '+who()+'. Vim pelo site da Caramel e gostaria de consultar a disponibilidade de '+f.name+' (pote de '+s.ml+' ml). Pode me confirmar se tem e qual o valor?');
-      var w=window.open(u,'_blank');if(!w)location.href=u;
-      return;
-    }
-    addItem('p|'+s.ml+'|'+f.id+'|'+v.id,v.label,'Pote de '+s.ml+' ml',priceOf(s,f),qty);
-    qty=1;$('qVal').textContent=1;
-  })});
-  $('addKit').addEventListener('click',function(){gate(function(){addItem('kit','Kit Festa','20 potinhos de 40 ml, sabores a combinar',135,1)})});
-  $('gift').addEventListener('click',function(e){
-    var b=e.target.closest('[data-gift]');if(!b)return;
-    GIFT=b.dataset.gift;renderCart();
-  });
-  $('mode').addEventListener('click',function(e){
-    var b=e.target.closest('[data-mode]');if(!b)return;
-    MODE=b.dataset.mode;try{localStorage.setItem('caramel-modo',MODE)}catch(x){}
-    renderCart();
-  });
-  renderCart();
-  update();
-})();
-</script>
-
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/feedback.js"></script>
 </body>
 </html>
