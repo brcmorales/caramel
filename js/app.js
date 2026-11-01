@@ -18,6 +18,8 @@ try {
   document.querySelector('main').insertAdjacentHTML('afterbegin', '<p class="warn" style="margin:24px">Não consegui carregar os produtos. Fale com a gente no WhatsApp.</p>');
   throw e;
 }
+const consulta = D.consulta || [];
+const waConsulta = (c) => waUrl(`Olá, Caramel! Queria saber se a ${c.nome.toLowerCase()} está disponível e os valores.`);
 const sabor = (id) => D.sabores.find((s) => s.id === id);
 const tamanho = (id) => D.tamanhos.find((t) => t.id === id);
 const minPreco = (s) => Math.min(...Object.values(s.precos));
@@ -86,7 +88,7 @@ let primeiro = true;
 function updateBuilder(animar = true) {
   ajustaTam();
   const s = sabor(sel.sabor), t = tamanho(sel.tam), b = baseDe(s.base), vs = variantes(s.base);
-  $('#pick-base').innerHTML = bases.map((x) => `<button type="button" class="pill" role="radio" aria-checked="${x.id === s.base}" data-b="${x.id}"><span class="dot" style="background:${x.cor}"></span>${esc(x.nome)}</button>`).join('');
+  $('#pick-base').innerHTML = bases.map((x) => `<button type="button" class="pill" role="radio" aria-checked="${x.id === s.base}" data-b="${x.id}"><span class="dot" style="background:${x.cor}"></span>${esc(x.nome)}</button>`).join('') + consulta.map((c) => `<a class="pill pill-link" href="${waConsulta(c)}" target="_blank" rel="noopener"><span class="dot" style="background:${c.cor}"></span>${esc(c.nome)} · sob consulta</a>`).join('');
   $('#var-wrap').hidden = vs.length < 2;
   $('#pick-var').innerHTML = vs.map((x) => `<button type="button" class="pill" role="radio" aria-checked="${x.id === s.id}" data-v="${x.id}"><span class="dot" style="background:linear-gradient(${x.visual.topo} 0 45%,${x.visual.corpo} 45%)"></span>${esc(x.variedade)}</button>`).join('');
   $('#hint-disp').textContent = `${b.nome}${vs.length > 1 ? ' · ' + s.variedade : ''}: potes de ${listaMl(s)}.${s.consulta ? ' Disponibilidade sob consulta.' : ''}`;
@@ -143,7 +145,7 @@ $('#add').onclick = (e) => {
 };
 
 /* ---------- sabores e tabela ---------- */
-$('#t-sabores').textContent = `${D.sabores.length} jeitos de pedir colher`;
+$('#t-sabores').textContent = `${D.sabores.length + consulta.length} jeitos de pedir colher`;
 $('#lista-sabores').innerHTML = D.sabores.map((s, i) => `
   <li class="fl rv" style="transition-delay:${Math.min(i, 5) * 50}ms">
     <div class="fl-img"><img src="${thumb(s)}" alt="${esc(s.alt)}" width="96" height="96" loading="lazy" class="${isCover(s) ? 'cover' : ''}"></div>
@@ -152,6 +154,14 @@ $('#lista-sabores').innerHTML = D.sabores.map((s, i) => `
       <p>${esc(s.descricao)}</p>
       <span class="from">a partir de ${BRL.format(minPreco(s))}</span><br>
       <button type="button" data-escolher="${s.id}">Escolher este</button>
+    </div>
+  </li>`).join('') + consulta.map((c) => `
+  <li class="fl rv">
+    <div class="fl-img"><img src="${c.foto}" alt="${esc(c.alt)}" width="96" height="96" loading="lazy"></div>
+    <div>
+      <h3>${esc(c.nome)}<span class="tag">sob consulta</span></h3>
+      <p>${esc(c.descricao)}</p>
+      <a class="consult-link" href="${waConsulta(c)}" target="_blank" rel="noopener">Consultar no WhatsApp</a>
     </div>
   </li>`).join('');
 $('#lista-sabores').addEventListener('click', (e) => {
@@ -165,7 +175,7 @@ $('#tabela').innerHTML = `<div class="tr head" role="row"><span role="columnhead
     return p == null
       ? `<span class="cell off" role="cell" aria-label="indisponível">—</span>`
       : `<button type="button" class="cell" role="cell" data-s="${s.id}" data-t="${t.id}" aria-pressed="false" aria-label="${esc(s.nome)}, ${t.rotulo}, ${BRL.format(p)}">${NUM.format(p)}</button>`;
-  }).join('')}</div>`).join('');
+  }).join('')}</div>`).join('') + consulta.map((c) => `<div class="tr" role="row"><span class="nm" role="rowheader">${esc(c.nome)}</span><a class="cell cons" role="cell" href="${waConsulta(c)}" target="_blank" rel="noopener">Sob consulta · WhatsApp</a></div>`).join('');
 $('#tabela').addEventListener('click', (e) => {
   const c = e.target.closest('.cell[data-s]'); if (!c) return;
   sel.sabor = c.dataset.s; sel.tam = c.dataset.t; updateBuilder(false); goto('#monte');

@@ -370,3 +370,8 @@ dialog.sheet.dragging{transition:none}
 .link-d{display:flex;justify-content:center;align-items:center;min-height:48px;margin-top:6px;color:var(--d-acc);text-underline-offset:3px}
 .kit-photo{margin:34px auto 0;border-radius:18px;max-width:560px;width:100%;height:auto;opacity:.95}
 @media (prefers-reduced-motion:reduce){.kj.novo{animation:none}}
+
+a.pill{text-decoration:none}
+.pill-link{border-style:dashed;color:var(--d-mute)}
+.cell.cons{grid-column:2 / -1;text-decoration:none;color:var(--ink);font-weight:500;font-size:.88rem;text-align:center;padding:0 8px}
+.consult-link{display:inline-flex;align-items:center;min-height:44px;color:var(--caramel-deep);font-weight:700;font-size:.9rem;text-underline-offset:3px}

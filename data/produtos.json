@@ -136,24 +136,6 @@
         "topo": "#4a2a1a"
       },
       "alt": "Pote de vidro com pudim + creme de avelã"
-    },
-    {
-      "id": "geleia",
-      "nome": "Geleia de amora",
-      "descricao": "Geleia caseira com pedaços de fruta. Disponibilidade sob consulta.",
-      "foto": "img/geleia.webp",
-      "alt": "Pote de vidro com geleia de amora",
-      "consulta": true,
-      "precos": {
-        "40": 7,
-        "150": 16
-      },
-      "base": "geleia",
-      "variedade": "Tradicional",
-      "visual": {
-        "corpo": "#4a1730",
-        "topo": "#6d1f3f"
-      }
     }
   ],
   "kitFesta": {
@@ -248,8 +230,7 @@
         "opcoes": [
           "doce-de-leite",
           "doce-de-leite-avela",
-          "doce-de-leite-coco",
-          "geleia"
+          "doce-de-leite-coco"
         ]
       },
       {
@@ -279,13 +260,18 @@
       "id": "avela",
       "nome": "Creme de avelã",
       "cor": "#6b4128"
-    },
-    {
-      "id": "geleia",
-      "nome": "Geleia de amora",
-      "cor": "#5a1d3a"
     }
   ],
   "_medidas": "Preencha medidas ({\"altura\":\"63 mm\",\"diametro\":\"Ø 63 mm\"}) em cada tamanho para mostrar as cotas no desenho do pote.",
-  "_tamanhos": "larg/alt = proporção do desenho (ilustrativa). Quando souber a medida real do vidro, preencha medidasMm: {\"alt\":63,\"diam\":63} e as cotas aparecem."
+  "_tamanhos": "larg/alt = proporção do desenho (ilustrativa). Quando souber a medida real do vidro, preencha medidasMm: {\"alt\":63,\"diam\":63} e as cotas aparecem.",
+  "consulta": [
+    {
+      "id": "geleia",
+      "nome": "Geleia de amora",
+      "descricao": "Geleia caseira com pedaços de fruta. A disponibilidade muda conforme a produção: consulte no WhatsApp.",
+      "foto": "img/geleia.webp",
+      "alt": "Pote de vidro com geleia de amora",
+      "cor": "#5a1d3a"
+    }
+  ]
 }
